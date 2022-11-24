@@ -8,7 +8,7 @@ namespace LetsFeedTheCatsProject
         {
             InitializeComponent();
 
-            pbWelcomeCat.Image = Image.FromFile("C:/MEIN/BSU/sem5/tp/LetsFeedTheCats/LetsFeedTheCats/LetsFeedTheCatsProject/LetsFeedTheCatsProject/res/pictures/welcomeCat.png");
+            pbWelcomeCat.Image = Image.FromFile("../../../res/pictures/welcomeCat.png");
             pbWelcomeCat.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void btnSignIn_Click(object sender, EventArgs e)
