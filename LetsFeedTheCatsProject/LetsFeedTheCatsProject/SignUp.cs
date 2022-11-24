@@ -17,10 +17,10 @@ namespace LetsFeedTheCatsProject
         {
             InitializeComponent();
 
-            pbPassword.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+            pbPassword.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             pbPassword.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            pbPasswordConfirm.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+            pbPasswordConfirm.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             pbPasswordConfirm.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pbCheck.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -49,11 +49,11 @@ namespace LetsFeedTheCatsProject
 
             if (tbPassword.UseSystemPasswordChar)
             {
-                pbPassword.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+                pbPassword.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             }
             else
             {
-                pbPassword.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeOpen.png");
+                pbPassword.Image = Image.FromFile("../../../res/pictures/eyeOpen.png");
             }
         }
 
@@ -63,11 +63,11 @@ namespace LetsFeedTheCatsProject
 
             if (tbPasswordConfirm.UseSystemPasswordChar)
             {
-                pbPasswordConfirm.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+                pbPasswordConfirm.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             }
             else
             {
-                pbPasswordConfirm.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeOpen.png");
+                pbPasswordConfirm.Image = Image.FromFile("../../../res/pictures/eyeOpen.png");
             }
         }
 
@@ -85,11 +85,11 @@ namespace LetsFeedTheCatsProject
 
             if (passwordConfirm == password)
             {
-                pbCheck.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\checked.png");
+                pbCheck.Image = Image.FromFile("../../../res/pictures/checked.png");
             }
             else
             {
-                pbCheck.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\notChecked.png");
+                pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
         }
 
