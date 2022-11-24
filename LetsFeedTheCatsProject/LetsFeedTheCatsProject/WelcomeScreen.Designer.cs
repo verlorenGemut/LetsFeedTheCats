@@ -39,11 +39,11 @@
             // 
             this.lblCatFeeder.AutoSize = true;
             this.lblCatFeeder.Font = new System.Drawing.Font("Snap ITC", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCatFeeder.Location = new System.Drawing.Point(233, 206);
+            this.lblCatFeeder.Location = new System.Drawing.Point(109, 193);
             this.lblCatFeeder.Name = "lblCatFeeder";
-            this.lblCatFeeder.Size = new System.Drawing.Size(326, 61);
+            this.lblCatFeeder.Size = new System.Drawing.Size(588, 61);
             this.lblCatFeeder.TabIndex = 0;
-            this.lblCatFeeder.Text = "Cat Feeder";
+            this.lblCatFeeder.Text = "Let\'s Feed the Cats!";
             this.lblCatFeeder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSignIn
@@ -56,6 +56,7 @@
             this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnSignUp
             // 
@@ -67,10 +68,11 @@
             this.btnSignUp.TabIndex = 2;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // pbWelcomeCat
             // 
-            this.pbWelcomeCat.Location = new System.Drawing.Point(282, 32);
+            this.pbWelcomeCat.Location = new System.Drawing.Point(280, 12);
             this.pbWelcomeCat.Name = "pbWelcomeCat";
             this.pbWelcomeCat.Size = new System.Drawing.Size(235, 157);
             this.pbWelcomeCat.TabIndex = 3;
@@ -86,8 +88,8 @@
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.lblCatFeeder);
             this.Name = "WelcomeScreen";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.WelcomeScreen_Load);
+            this.Text = "Let\'s Feed The Cats!";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WelcomeScreen_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbWelcomeCat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
