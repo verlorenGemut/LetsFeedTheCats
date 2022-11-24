@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj": {}
+    "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj": {}
   },
   "projects": {
-    "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj": {
+    "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
+        "projectUniqueName": "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
         "projectName": "LetsFeedTheCatsProject",
-        "projectPath": "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
-        "packagesPath": "C:\\Users\\Alise\\.nuget\\packages\\",
-        "outputPath": "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\",
+        "projectPath": "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
+        "packagesPath": "C:\\Users\\Ксения\\.nuget\\packages\\",
+        "outputPath": "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alise\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ксения\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

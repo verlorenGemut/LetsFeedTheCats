@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LetsFeedTheCatsProject
 {
@@ -96,6 +97,11 @@ namespace LetsFeedTheCatsProject
         {
             //add checking e-mail with database => if user with that e-mail already exists, need to show message immediately
             //when Submit, need to show Message: "your account is waiting for vertification from Admin"
+
+            SqlDataAdapter adapter = SqlDataAdapter();
+            DataTable table = new DataTable();
+
+
         }
     }
 }
