@@ -1,7 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="EditFeeder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditShedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ErrorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManualFeeding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StatusBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WelcomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WelcomeUser.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
