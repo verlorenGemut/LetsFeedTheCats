@@ -15,11 +15,11 @@ namespace LetsFeedTheCatsProject
 {
     public partial class SignUp : Form
     {
-        SignUpDB RegisterDB = new SignUpDB(); 
+        SignUpDB RegisterDB = new SignUpDB();
 
         public SignUp()
         {
-        
+
             InitializeComponent();
 
             pbPassword.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
@@ -116,10 +116,6 @@ namespace LetsFeedTheCatsProject
 
             setSubmitButton();
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> abbb5de0b91c27d10f6cac64054701bdb9489700
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -130,15 +126,15 @@ namespace LetsFeedTheCatsProject
             var passUser = tbPassword.Text;
             var emailUser = tbEmail.Text;
 
-           // SqlDataAdapter adapter= new SqlDataAdapter();   
-           // DataTable dataTable= new DataTable();
+            // SqlDataAdapter adapter= new SqlDataAdapter();   
+            // DataTable dataTable= new DataTable();
 
             string queryString = $"insert into signup(user_email, login_user, password_user) values('{emailUser}', '{loginUser}', '{passUser}')";
 
             SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
 
             RegisterDB.openConnection();
-           
+
 
             if (command.ExecuteNonQuery() == 1)
             {
@@ -149,8 +145,9 @@ namespace LetsFeedTheCatsProject
                 this.Show();
             }
             else
-<<<<<<< HEAD
+            {
                 MessageBox.Show("Account is not create!");
+            }
 
             RegisterDB.closeConnection();
 
@@ -167,10 +164,10 @@ namespace LetsFeedTheCatsProject
 
             SqlCommand command = new SqlCommand(querystring, RegisterDB.getConnection());
 
-            adapter.SelectCommand= command;
+            adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 MessageBox.Show("This e-mail is busy!");
                 return true;
@@ -181,9 +178,7 @@ namespace LetsFeedTheCatsProject
             }
         }
 
-=======
-                MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
+        //MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         private void setSubmitButton()
         {
             btnSubmit.Enabled = (tbEmail.Text != "") && (tbUsername.Text != "") && (tbPassword.Text != "") && (tbPassword.Text == tbPasswordConfirm.Text);
@@ -197,6 +192,5 @@ namespace LetsFeedTheCatsProject
         {
             setSubmitButton();
         }
->>>>>>> abbb5de0b91c27d10f6cac64054701bdb9489700
     }
 }

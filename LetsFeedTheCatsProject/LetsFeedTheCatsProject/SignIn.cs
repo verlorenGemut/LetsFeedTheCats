@@ -52,6 +52,32 @@ namespace LetsFeedTheCatsProject
             //if this User is an Admin => show another Hello Window
 
 
+            var emailUser = tbEmail.Text;
+            var passUser = tbPassword.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable dataTable = new DataTable();
+
+            string queryString = $"select * from signup where user_email = '{emailUser}' and password_user = '{passUser}'";
+
+            SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count == 1)
+            {
+                MessageBox.Show("You are succesfully enter an account!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SignIn SignIpform = new SignIn();
+                this.Hide();
+                SignIpform.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("Check your e-mail or password!", "E-mail or password can be busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+
             //DELETE THIS
             //NEED TO TESTING
             WelcomeUser dlgWelcomeUser = (WelcomeUser)Application.OpenForms["WelcomeUser"];
@@ -68,30 +94,7 @@ namespace LetsFeedTheCatsProject
 
             this.Hide();
 
-            var emailUser = tbEmail.Text;
-            var passUser = tbPassword.Text;
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable dataTable = new DataTable();
-
-            string queryString = $"select id_user, user_email, password_user from signup where user_email = '{emailUser}' and password_user = '{passUser}'";
-
-            SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count == 1)
-            {
-                MessageBox.Show("Your account is waiting for vertification from Admin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SignIn SignIpform = new SignIn();
-                this.Hide();
-                SignIpform.ShowDialog();
-                this.Show();
-            }
-            else
-                MessageBox.Show("Check your e-mail!", "E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            
         }
     }
 }
