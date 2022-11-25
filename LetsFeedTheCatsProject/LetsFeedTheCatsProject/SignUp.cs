@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace LetsFeedTheCatsProject
 {
     public partial class SignUp : Form
     {
+        SignUpDB RegisterDB = new SignUpDB(); 
+
         public SignUp()
         {
+        
             InitializeComponent();
 
             pbPassword.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
@@ -98,8 +102,31 @@ namespace LetsFeedTheCatsProject
             //add checking e-mail with database => if user with that e-mail already exists, need to show message immediately
             //when Submit, need to show Message: "your account is waiting for vertification from Admin"
 
-            SqlDataAdapter adapter = SqlDataAdapter();
-            DataTable table = new DataTable();
+            var loginUser = tbUsername.Text;
+            var passUser = tbPassword.Text;
+            var emailUser = tbEmail.Text;
+
+            SqlDataAdapter adapter= new SqlDataAdapter();   
+            DataTable dataTable= new DataTable();
+
+            string queryString = $"select id_user, user_email, login_user, password_user from signup where user_email = '{emailUser}' and login_user = '{loginUser}' and password_user = '{passUser}'";
+
+            SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
+
+            adapter.SelectCommand= command;
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count == 1)
+            {
+                MessageBox.Show("Your account is waiting for vertification from Admin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SignUp SignUpform = new SignUp();
+                this.Hide();
+                SignUpform.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
 
 
         }
