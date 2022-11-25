@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Microsoft.EntityFrameworkCore.Storage;
+//using Microsoft.EntityFrameworkCore.Storage;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LetsFeedTheCatsProject
@@ -116,6 +116,22 @@ namespace LetsFeedTheCatsProject
 
             setSubmitButton();
         }
+<<<<<<< HEAD
+=======
+        private void setSubmitButton()
+        {
+            btnSubmit.Enabled = (tbEmail.Text != "") && (tbUsername.Text != "") && (tbPassword.Text != "") && (tbPassword.Text == tbPasswordConfirm.Text);
+        }
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            setSubmitButton();
+        }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+            setSubmitButton();
+        }
+>>>>>>> e805ce2026359b46dd6bdcb7fd6bc69065ab054a
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -138,7 +154,17 @@ namespace LetsFeedTheCatsProject
 
             if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Your account is waiting for vertification from Admin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Needs vertification", "Please, wait", "Your account is waiting for vertification from Admin", "Okay!");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
+
                 SignUp SignUpform = new SignUp();
                 this.Hide();
                 SignUpform.ShowDialog();
@@ -146,7 +172,20 @@ namespace LetsFeedTheCatsProject
             }
             else
             {
+<<<<<<< HEAD
                 MessageBox.Show("Account is not create!");
+=======
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Error", "Error", "Account wasn't created", "Okay :(");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
+>>>>>>> e805ce2026359b46dd6bdcb7fd6bc69065ab054a
             }
 
             RegisterDB.closeConnection();
@@ -169,14 +208,35 @@ namespace LetsFeedTheCatsProject
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("This e-mail is busy!");
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Error", "Error", "This e-mail is busy", "Okay :(");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
+
                 return true;
             }
             else
             {
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Error", "Error", "Check your e-mail!", "Okay :(");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
                 return false;
             }
         }
+<<<<<<< HEAD
 
         //MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         private void setSubmitButton()
@@ -191,6 +251,7 @@ namespace LetsFeedTheCatsProject
         private void tbUsername_TextChanged(object sender, EventArgs e)
         {
             setSubmitButton();
+=======
+>>>>>>> e805ce2026359b46dd6bdcb7fd6bc69065ab054a
         }
     }
-}

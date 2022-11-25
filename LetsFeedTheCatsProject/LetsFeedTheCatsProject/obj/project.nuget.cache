@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "f6dgPPq4zDftobj5rhcILZyEoLvKqIWyPbwdAdZf65H9z3ydKOOzGGltA6Ax37+IevagAxyy/btb7RMuATAq9Q==",
+=======
+  "dgSpecHash": "ERKim8NgzxNS2IXGYn+qF8wz40NPR3fjep90aO68QSDsZexx4pWC+gK9nKuDt8vCwTkpKbBgHXD+uSrGNZDjQA==",
+>>>>>>> e805ce2026359b46dd6bdcb7fd6bc69065ab054a
   "success": true,
   "projectFilePath": "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
   "expectedPackageFiles": [
@@ -85,7 +89,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Ошибка чтения файла кэша D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Ошибка чтения файла кэша C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> e805ce2026359b46dd6bdcb7fd6bc69065ab054a
     }
   ]
 }
