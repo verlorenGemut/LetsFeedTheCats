@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Storage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LetsFeedTheCatsProject
 {
@@ -95,8 +96,30 @@ namespace LetsFeedTheCatsProject
             {
                 pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
+
+            setSubmitButton();
         }
 
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            string password = tbPassword.Text;
+            string passwordConfirm = tbPasswordConfirm.Text;
+
+            if (passwordConfirm == password)
+            {
+                pbCheck.Image = Image.FromFile("../../../res/pictures/checked.png");
+            }
+            else
+            {
+                pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
+            }
+
+            setSubmitButton();
+        }
+<<<<<<< HEAD
+
+=======
+>>>>>>> abbb5de0b91c27d10f6cac64054701bdb9489700
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -126,6 +149,7 @@ namespace LetsFeedTheCatsProject
                 this.Show();
             }
             else
+<<<<<<< HEAD
                 MessageBox.Show("Account is not create!");
 
             RegisterDB.closeConnection();
@@ -157,5 +181,22 @@ namespace LetsFeedTheCatsProject
             }
         }
 
+=======
+                MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        private void setSubmitButton()
+        {
+            btnSubmit.Enabled = (tbEmail.Text != "") && (tbUsername.Text != "") && (tbPassword.Text != "") && (tbPassword.Text == tbPasswordConfirm.Text);
+        }
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            setSubmitButton();
+        }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+            setSubmitButton();
+        }
+>>>>>>> abbb5de0b91c27d10f6cac64054701bdb9489700
     }
 }

@@ -3997,7 +3997,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Ошибка чтения файла кэша D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Ошибка чтения файла кэша C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> abbb5de0b91c27d10f6cac64054701bdb9489700
     }
   ]
 }
