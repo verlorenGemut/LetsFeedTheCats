@@ -96,7 +96,21 @@ namespace LetsFeedTheCatsProject
                 pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
         }
-<<<<<<< HEAD
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            string password = tbPassword.Text;
+            string passwordConfirm = tbPasswordConfirm.Text;
+
+            if (passwordConfirm == password)
+            {
+                pbCheck.Image = Image.FromFile("../../../res/pictures/checked.png");
+            }
+            else
+            {
+                pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
+            }
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -131,7 +145,5 @@ namespace LetsFeedTheCatsProject
 
 
         }
-=======
->>>>>>> d9ff12704435e0b2a76eeec3ad0a520504b8adb6
     }
 }
