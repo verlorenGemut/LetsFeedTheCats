@@ -78,6 +78,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(244, 61);
             this.tbEmail.TabIndex = 8;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
             // lblPassword
             // 
@@ -109,6 +110,7 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(244, 61);
             this.tbUsername.TabIndex = 11;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
             // 
             // lblUsername
             // 
@@ -146,6 +148,7 @@
             // btnSubmit
             // 
             this.btnSubmit.AutoSize = true;
+            this.btnSubmit.Enabled = false;
             this.btnSubmit.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSubmit.Location = new System.Drawing.Point(312, 593);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
