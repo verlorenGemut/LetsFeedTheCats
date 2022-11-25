@@ -96,7 +96,7 @@ namespace LetsFeedTheCatsProject
                 pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
         }
-<<<<<<< HEAD
+
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -107,17 +107,17 @@ namespace LetsFeedTheCatsProject
             var passUser = tbPassword.Text;
             var emailUser = tbEmail.Text;
 
-            SqlDataAdapter adapter= new SqlDataAdapter();   
-            DataTable dataTable= new DataTable();
+           // SqlDataAdapter adapter= new SqlDataAdapter();   
+           // DataTable dataTable= new DataTable();
 
-            string queryString = $"select id_user, user_email, login_user, password_user from signup where user_email = '{emailUser}' and login_user = '{loginUser}' and password_user = '{passUser}'";
+            string queryString = $"insert into signup(user_email, login_user, password_user) values('{emailUser}', '{loginUser}', '{passUser}')";
 
             SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
 
-            adapter.SelectCommand= command;
-            adapter.Fill(dataTable);
+            RegisterDB.openConnection();
+           
 
-            if (dataTable.Rows.Count == 1)
+            if (command.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Your account is waiting for vertification from Admin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SignUp SignUpform = new SignUp();
@@ -126,12 +126,36 @@ namespace LetsFeedTheCatsProject
                 this.Show();
             }
             else
-                MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Account is not create!");
 
-
+            RegisterDB.closeConnection();
 
         }
-=======
->>>>>>> d9ff12704435e0b2a76eeec3ad0a520504b8adb6
+
+        private Boolean checkEmail()
+        {
+            var emailUser = tbEmail.Text;
+            var passUser = tbPassword.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            string querystring = $"select * from signup where user_email = '{emailUser}' and password_user = '{passUser}'";
+
+            SqlCommand command = new SqlCommand(querystring, RegisterDB.getConnection());
+
+            adapter.SelectCommand= command;
+            adapter.Fill(table);
+
+            if(table.Rows.Count > 0)
+            {
+                MessageBox.Show("This e-mail is busy!");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LetsFeedTheCatsProject
 {
+    
     public partial class SignIn : Form
     {
+        SignUpDB RegisterDB = new SignUpDB();
         public SignIn()
         {
             InitializeComponent();
@@ -64,6 +67,31 @@ namespace LetsFeedTheCatsProject
             }
 
             this.Hide();
+
+            var emailUser = tbEmail.Text;
+            var passUser = tbPassword.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable dataTable = new DataTable();
+
+            string queryString = $"select id_user, user_email, password_user from signup where user_email = '{emailUser}' and password_user = '{passUser}'";
+
+            SqlCommand command = new SqlCommand(queryString, RegisterDB.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count == 1)
+            {
+                MessageBox.Show("Your account is waiting for vertification from Admin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SignIn SignIpform = new SignIn();
+                this.Hide();
+                SignIpform.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("Check your e-mail!", "E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }
