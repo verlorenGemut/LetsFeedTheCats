@@ -16,27 +16,19 @@ namespace LetsFeedTheCatsProject
         {
             InitializeComponent();
         }
+        public ErrorWindow(string name, string label, string message, string button)
+        {
+            InitializeComponent();
+            this.Name = name;
+            this.lblError.Text = label;
+            this.lblErrorMessage.Text = message;
+            this.btnTryAgain.Text = button;
+        }
 
         private void btnTryAgain_Click(object sender, EventArgs e)
         {
             SignIn dlgSignIn = new SignIn();
             dlgSignIn.ShowDialog();
-        }
-
-        private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SignUp dlgSignUp = (SignUp)Application.OpenForms["SignUp"];
-            if (dlgSignUp == null)
-            {
-                dlgSignUp = new SignUp();
-                dlgSignUp.Show();
-            }
-            else
-            {
-                dlgSignUp.Activate();
-            }
-
-            this.Hide();
         }
     }
 }
