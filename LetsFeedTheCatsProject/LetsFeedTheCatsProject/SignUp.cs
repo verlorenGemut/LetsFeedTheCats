@@ -96,6 +96,7 @@ namespace LetsFeedTheCatsProject
                 pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
         }
+<<<<<<< HEAD
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -130,5 +131,7 @@ namespace LetsFeedTheCatsProject
 
 
         }
+=======
+>>>>>>> d9ff12704435e0b2a76eeec3ad0a520504b8adb6
     }
 }

@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "f6dgPPq4zDftobj5rhcILZyEoLvKqIWyPbwdAdZf65H9z3ydKOOzGGltA6Ax37+IevagAxyy/btb7RMuATAq9Q==",
   "success": true,
   "projectFilePath": "D:\\Labs\\C#\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
@@ -80,5 +81,11 @@
     "C:\\Users\\Ксения\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Ксения\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "3OsDYB2Wnd1VH0/JHsoMl2uBuW2K6A/q69UQDabelZgv+58NpXDmc1/0Bj4iqBjj5boTAlZWkiOzG/IFVywl2g==",
+  "success": true,
+  "projectFilePath": "C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> d9ff12704435e0b2a76eeec3ad0a520504b8adb6
   "logs": []
 }
