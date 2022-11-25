@@ -92,16 +92,5 @@ namespace LetsFeedTheCatsProject
                 pbCheck.Image = Image.FromFile("../../../res/pictures/notChecked.png");
             }
         }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            //add checking e-mail with database => if user with that e-mail already exists, need to show message immediately
-            //when Submit, need to show Message: "your account is waiting for vertification from Admin"
-
-            SqlDataAdapter adapter = SqlDataAdapter();
-            DataTable table = new DataTable();
-
-
-        }
     }
 }

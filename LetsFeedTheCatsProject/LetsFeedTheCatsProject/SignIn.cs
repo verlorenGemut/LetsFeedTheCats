@@ -16,7 +16,7 @@ namespace LetsFeedTheCatsProject
         {
             InitializeComponent();
 
-            pbSecurity.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+            pbSecurity.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             pbSecurity.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -26,11 +26,11 @@ namespace LetsFeedTheCatsProject
 
             if(tbPassword.UseSystemPasswordChar)
             {
-                pbSecurity.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeClose.png");
+                pbSecurity.Image = Image.FromFile("../../../res/pictures/eyeClose.png");
             }
             else
             {
-                pbSecurity.Image = Image.FromFile("C:\\MEIN\\BSU\\sem5\\tp\\LetsFeedTheCats\\LetsFeedTheCats\\LetsFeedTheCatsProject\\LetsFeedTheCatsProject\\res\\pictures\\eyeOpen.png");
+                pbSecurity.Image = Image.FromFile("../../../res/pictures/eyeOpen.png");
             }
         }
 
