@@ -40,9 +40,10 @@
             // 
             this.btnBack.AutoSize = true;
             this.btnBack.Font = new System.Drawing.Font("Snap ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(17, 20);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(130, 54);
+            this.btnBack.Size = new System.Drawing.Size(186, 90);
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
             // 
             this.lblManualFeeding.AutoSize = true;
             this.lblManualFeeding.Font = new System.Drawing.Font("Snap ITC", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblManualFeeding.Location = new System.Drawing.Point(171, 77);
+            this.lblManualFeeding.Location = new System.Drawing.Point(244, 128);
+            this.lblManualFeeding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManualFeeding.Name = "lblManualFeeding";
-            this.lblManualFeeding.Size = new System.Drawing.Size(445, 61);
+            this.lblManualFeeding.Size = new System.Drawing.Size(657, 90);
             this.lblManualFeeding.TabIndex = 33;
             this.lblManualFeeding.Text = "Manual Feeding";
             this.lblManualFeeding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +65,10 @@
             // 
             this.lblAddFeed.AutoSize = true;
             this.lblAddFeed.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddFeed.Location = new System.Drawing.Point(63, 181);
+            this.lblAddFeed.Location = new System.Drawing.Point(90, 302);
+            this.lblAddFeed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddFeed.Name = "lblAddFeed";
-            this.lblAddFeed.Size = new System.Drawing.Size(208, 44);
+            this.lblAddFeed.Size = new System.Drawing.Size(310, 64);
             this.lblAddFeed.TabIndex = 34;
             this.lblAddFeed.Text = "Add Feed:";
             this.lblAddFeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,19 +76,22 @@
             // tbAddFeed
             // 
             this.tbAddFeed.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbAddFeed.Location = new System.Drawing.Point(491, 179);
+            this.tbAddFeed.Location = new System.Drawing.Point(701, 298);
+            this.tbAddFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbAddFeed.Name = "tbAddFeed";
-            this.tbAddFeed.Size = new System.Drawing.Size(100, 50);
+            this.tbAddFeed.Size = new System.Drawing.Size(141, 72);
             this.tbAddFeed.TabIndex = 35;
+            this.tbAddFeed.Text = "50";
             this.tbAddFeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAddFeed_KeyPress);
             // 
             // lblG
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblG.Location = new System.Drawing.Point(617, 181);
+            this.lblG.Location = new System.Drawing.Point(881, 302);
+            this.lblG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblG.Name = "lblG";
-            this.lblG.Size = new System.Drawing.Size(41, 44);
+            this.lblG.Size = new System.Drawing.Size(60, 64);
             this.lblG.TabIndex = 36;
             this.lblG.Text = "g";
             this.lblG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,9 +100,10 @@
             // 
             this.btnSubmit.AutoSize = true;
             this.btnSubmit.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSubmit.Location = new System.Drawing.Point(320, 274);
+            this.btnSubmit.Location = new System.Drawing.Point(457, 457);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(164, 54);
+            this.btnSubmit.Size = new System.Drawing.Size(237, 90);
             this.btnSubmit.TabIndex = 37;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -104,15 +111,16 @@
             // 
             // ManualFeeding
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 361);
+            this.ClientSize = new System.Drawing.Size(1143, 602);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblG);
             this.Controls.Add(this.tbAddFeed);
             this.Controls.Add(this.lblAddFeed);
             this.Controls.Add(this.lblManualFeeding);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManualFeeding";
             this.Text = "Manual Feeding";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManualFeeding_FormClosed);

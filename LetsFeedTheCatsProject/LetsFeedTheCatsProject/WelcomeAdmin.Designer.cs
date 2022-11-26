@@ -52,9 +52,10 @@
             // 
             this.lblHelloAdmin.AutoSize = true;
             this.lblHelloAdmin.Font = new System.Drawing.Font("Snap ITC", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHelloAdmin.Location = new System.Drawing.Point(217, 69);
+            this.lblHelloAdmin.Location = new System.Drawing.Point(310, 115);
+            this.lblHelloAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHelloAdmin.Name = "lblHelloAdmin";
-            this.lblHelloAdmin.Size = new System.Drawing.Size(389, 61);
+            this.lblHelloAdmin.Size = new System.Drawing.Size(577, 90);
             this.lblHelloAdmin.TabIndex = 3;
             this.lblHelloAdmin.Text = "Hello, Admin!";
             this.lblHelloAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +64,10 @@
             // 
             this.btnLogOut.AutoSize = true;
             this.btnLogOut.Font = new System.Drawing.Font("Snap ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.Location = new System.Drawing.Point(12, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(17, 20);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(130, 54);
+            this.btnLogOut.Size = new System.Drawing.Size(186, 90);
             this.btnLogOut.TabIndex = 15;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -75,9 +77,10 @@
             // 
             this.btnExportLogs.AutoSize = true;
             this.btnExportLogs.Font = new System.Drawing.Font("Snap ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportLogs.Location = new System.Drawing.Point(148, 12);
+            this.btnExportLogs.Location = new System.Drawing.Point(211, 20);
+            this.btnExportLogs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExportLogs.Name = "btnExportLogs";
-            this.btnExportLogs.Size = new System.Drawing.Size(92, 54);
+            this.btnExportLogs.Size = new System.Drawing.Size(131, 90);
             this.btnExportLogs.TabIndex = 16;
             this.btnExportLogs.Text = "Logs";
             this.btnExportLogs.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // 
             this.btnNotifications.AutoSize = true;
             this.btnNotifications.Font = new System.Drawing.Font("Snap ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNotifications.Location = new System.Drawing.Point(246, 12);
+            this.btnNotifications.Location = new System.Drawing.Point(351, 20);
+            this.btnNotifications.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.Size = new System.Drawing.Size(201, 54);
+            this.btnNotifications.Size = new System.Drawing.Size(292, 90);
             this.btnNotifications.TabIndex = 17;
             this.btnNotifications.Text = "Notifications";
             this.btnNotifications.UseVisualStyleBackColor = true;
@@ -99,9 +103,10 @@
             // 
             this.btnStatusBar.AutoSize = true;
             this.btnStatusBar.Font = new System.Drawing.Font("Snap ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStatusBar.Location = new System.Drawing.Point(453, 12);
+            this.btnStatusBar.Location = new System.Drawing.Point(647, 20);
+            this.btnStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStatusBar.Name = "btnStatusBar";
-            this.btnStatusBar.Size = new System.Drawing.Size(174, 54);
+            this.btnStatusBar.Size = new System.Drawing.Size(249, 90);
             this.btnStatusBar.TabIndex = 18;
             this.btnStatusBar.Text = "Status Bar";
             this.btnStatusBar.UseVisualStyleBackColor = true;
@@ -111,9 +116,10 @@
             // 
             this.lblUsers.AutoSize = true;
             this.lblUsers.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUsers.Location = new System.Drawing.Point(141, 170);
+            this.lblUsers.Location = new System.Drawing.Point(201, 283);
+            this.lblUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(99, 35);
+            this.lblUsers.Size = new System.Drawing.Size(145, 51);
             this.lblUsers.TabIndex = 19;
             this.lblUsers.Text = "User:";
             this.lblUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,18 +128,21 @@
             // 
             this.cbUsers.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbUsers.FormattingEnabled = true;
-            this.cbUsers.Location = new System.Drawing.Point(453, 170);
+            this.cbUsers.Location = new System.Drawing.Point(647, 283);
+            this.cbUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbUsers.Name = "cbUsers";
-            this.cbUsers.Size = new System.Drawing.Size(225, 43);
+            this.cbUsers.Size = new System.Drawing.Size(320, 61);
             this.cbUsers.TabIndex = 20;
+            this.cbUsers.Text = "delakoka";
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Snap ITC", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfo.Location = new System.Drawing.Point(339, 242);
+            this.lblInfo.Location = new System.Drawing.Point(484, 403);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(99, 44);
+            this.lblInfo.Size = new System.Drawing.Size(145, 64);
             this.lblInfo.TabIndex = 21;
             this.lblInfo.Text = "Info";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,19 +152,22 @@
             // 
             this.cbFeeders.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbFeeders.FormattingEnabled = true;
-            this.cbFeeders.Location = new System.Drawing.Point(453, 315);
+            this.cbFeeders.Location = new System.Drawing.Point(647, 525);
+            this.cbFeeders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbFeeders.Name = "cbFeeders";
-            this.cbFeeders.Size = new System.Drawing.Size(225, 43);
+            this.cbFeeders.Size = new System.Drawing.Size(397, 61);
             this.cbFeeders.TabIndex = 23;
+            this.cbFeeders.Text = "With dispenser";
             this.cbFeeders.Visible = false;
             // 
             // lblFeeder
             // 
             this.lblFeeder.AutoSize = true;
             this.lblFeeder.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFeeder.Location = new System.Drawing.Point(110, 318);
+            this.lblFeeder.Location = new System.Drawing.Point(157, 530);
+            this.lblFeeder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeeder.Name = "lblFeeder";
-            this.lblFeeder.Size = new System.Drawing.Size(130, 35);
+            this.lblFeeder.Size = new System.Drawing.Size(192, 51);
             this.lblFeeder.TabIndex = 22;
             this.lblFeeder.Text = "Feeder:";
             this.lblFeeder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,9 +177,10 @@
             // 
             this.lblFeederType.AutoSize = true;
             this.lblFeederType.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFeederType.Location = new System.Drawing.Point(141, 403);
+            this.lblFeederType.Location = new System.Drawing.Point(201, 672);
+            this.lblFeederType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeederType.Name = "lblFeederType";
-            this.lblFeederType.Size = new System.Drawing.Size(214, 35);
+            this.lblFeederType.Size = new System.Drawing.Size(316, 51);
             this.lblFeederType.TabIndex = 24;
             this.lblFeederType.Text = "Feeder Type:";
             this.lblFeederType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,9 +190,10 @@
             // 
             this.lblFeederTypeText.AutoSize = true;
             this.lblFeederTypeText.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFeederTypeText.Location = new System.Drawing.Point(413, 403);
+            this.lblFeederTypeText.Location = new System.Drawing.Point(590, 672);
+            this.lblFeederTypeText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeederTypeText.Name = "lblFeederTypeText";
-            this.lblFeederTypeText.Size = new System.Drawing.Size(247, 35);
+            this.lblFeederTypeText.Size = new System.Drawing.Size(363, 51);
             this.lblFeederTypeText.TabIndex = 25;
             this.lblFeederTypeText.Text = "With dispencer";
             this.lblFeederTypeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,9 +203,10 @@
             // 
             this.lblSchedule.AutoSize = true;
             this.lblSchedule.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSchedule.Location = new System.Drawing.Point(211, 463);
+            this.lblSchedule.Location = new System.Drawing.Point(301, 772);
+            this.lblSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(144, 35);
+            this.lblSchedule.Size = new System.Drawing.Size(212, 51);
             this.lblSchedule.TabIndex = 26;
             this.lblSchedule.Text = "Shedule:";
             this.lblSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,9 +216,10 @@
             // 
             this.btnExportSchedule.AutoSize = true;
             this.btnExportSchedule.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportSchedule.Location = new System.Drawing.Point(413, 453);
+            this.btnExportSchedule.Location = new System.Drawing.Point(590, 755);
+            this.btnExportSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExportSchedule.Name = "btnExportSchedule";
-            this.btnExportSchedule.Size = new System.Drawing.Size(149, 54);
+            this.btnExportSchedule.Size = new System.Drawing.Size(213, 90);
             this.btnExportSchedule.TabIndex = 27;
             this.btnExportSchedule.Text = "Export";
             this.btnExportSchedule.UseVisualStyleBackColor = true;
@@ -213,9 +229,10 @@
             // 
             this.lblFeedTypeText.AutoSize = true;
             this.lblFeedTypeText.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFeedTypeText.Location = new System.Drawing.Point(413, 521);
+            this.lblFeedTypeText.Location = new System.Drawing.Point(590, 868);
+            this.lblFeedTypeText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeedTypeText.Name = "lblFeedTypeText";
-            this.lblFeedTypeText.Size = new System.Drawing.Size(160, 35);
+            this.lblFeedTypeText.Size = new System.Drawing.Size(236, 51);
             this.lblFeedTypeText.TabIndex = 29;
             this.lblFeedTypeText.Text = "Wet Feed";
             this.lblFeedTypeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +242,10 @@
             // 
             this.lblFeedType.AutoSize = true;
             this.lblFeedType.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFeedType.Location = new System.Drawing.Point(174, 521);
+            this.lblFeedType.Location = new System.Drawing.Point(249, 868);
+            this.lblFeedType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeedType.Name = "lblFeedType";
-            this.lblFeedType.Size = new System.Drawing.Size(181, 35);
+            this.lblFeedType.Size = new System.Drawing.Size(267, 51);
             this.lblFeedType.TabIndex = 28;
             this.lblFeedType.Text = "Feed Type:";
             this.lblFeedType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,10 +255,11 @@
             // 
             this.lblLabelsText.AutoSize = true;
             this.lblLabelsText.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLabelsText.Location = new System.Drawing.Point(413, 575);
-            this.lblLabelsText.MaximumSize = new System.Drawing.Size(350, 0);
+            this.lblLabelsText.Location = new System.Drawing.Point(590, 958);
+            this.lblLabelsText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLabelsText.MaximumSize = new System.Drawing.Size(500, 0);
             this.lblLabelsText.Name = "lblLabelsText";
-            this.lblLabelsText.Size = new System.Drawing.Size(192, 35);
+            this.lblLabelsText.Size = new System.Drawing.Size(283, 51);
             this.lblLabelsText.TabIndex = 31;
             this.lblLabelsText.Text = "#something";
             this.lblLabelsText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,9 +269,10 @@
             // 
             this.lblLabels.AutoSize = true;
             this.lblLabels.Font = new System.Drawing.Font("Snap ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLabels.Location = new System.Drawing.Point(231, 575);
+            this.lblLabels.Location = new System.Drawing.Point(330, 958);
+            this.lblLabels.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLabels.Name = "lblLabels";
-            this.lblLabels.Size = new System.Drawing.Size(124, 35);
+            this.lblLabels.Size = new System.Drawing.Size(181, 51);
             this.lblLabels.TabIndex = 30;
             this.lblLabels.Text = "Labels:";
             this.lblLabels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -260,11 +280,11 @@
             // 
             // WelcomeAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 653);
+            this.ClientSize = new System.Drawing.Size(1143, 1050);
             this.Controls.Add(this.lblLabelsText);
             this.Controls.Add(this.lblLabels);
             this.Controls.Add(this.lblFeedTypeText);
@@ -283,6 +303,7 @@
             this.Controls.Add(this.btnExportLogs);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblHelloAdmin);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WelcomeAdmin";
             this.Text = "Hello, Admin!";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WelcomeAdmin_FormClosed);
