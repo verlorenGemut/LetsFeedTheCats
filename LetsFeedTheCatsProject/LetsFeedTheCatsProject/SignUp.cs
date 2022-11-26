@@ -134,9 +134,6 @@ namespace LetsFeedTheCatsProject
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //add checking e-mail with database => if user with that e-mail already exists, need to show message immediately
-            //when Submit, need to show Message: "your account is waiting for vertification from Admin"
-
             var loginUser = tbUsername.Text;
             var passUser = tbPassword.Text;
             var emailUser = tbEmail.Text;
@@ -171,7 +168,6 @@ namespace LetsFeedTheCatsProject
             }
             else
             {
-                MessageBox.Show("Account is not create!");
                 ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
                 if (dlgMessage == null)
                 {
@@ -233,8 +229,5 @@ namespace LetsFeedTheCatsProject
                 return false;
             }
         }
-
-        //MessageBox.Show("Check your e-mail!","E-mail user is busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-     
     }
 }

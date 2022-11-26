@@ -46,12 +46,6 @@ namespace LetsFeedTheCatsProject
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //need to check e-mail and password with database
-            //or show Error Window
-
-            //if this User is an Admin => show another Hello Window
-
-
             var emailUser = tbEmail.Text;
             var passUser = tbPassword.Text;
 
@@ -67,7 +61,6 @@ namespace LetsFeedTheCatsProject
 
             if (dataTable.Rows.Count == 1)
             {
-                MessageBox.Show("You are succesfully enter an account!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 WelcomeUser dlgWelcomeUser = (WelcomeUser)Application.OpenForms["WelcomeUser"];
        
                 if (dlgWelcomeUser == null)
@@ -84,9 +77,18 @@ namespace LetsFeedTheCatsProject
                 this.Hide();
             }
             else
-                MessageBox.Show("Check your e-mail or password!", "E-mail or password can be busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
+            {
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Error", "Error", "Check your e-mail or password", "Okay :(");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
+            }
 
             string newQueryString = $"select id_user from signup where id_user=5";
 
@@ -97,7 +99,6 @@ namespace LetsFeedTheCatsProject
 
             if (dataTable.Rows.Count > 0)
             {
-                MessageBox.Show("You are succesfully enter an account as ADMIN!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 WelcomeAdmin dlgWelcomeAdmin = (WelcomeAdmin)Application.OpenForms["WelcomeAdmin"];
 
                 if (dlgWelcomeAdmin == null)
@@ -114,15 +115,18 @@ namespace LetsFeedTheCatsProject
                 this.Hide();
             }
             else
-                MessageBox.Show("Check your e-mail or password!", "E-mail or password can be busy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
-
-            //DELETE THIS
-            //NEED TO TESTING
-
-
-
+            {
+                ErrorWindow dlgMessage = (ErrorWindow)Application.OpenForms["ErrorWindow"];
+                if (dlgMessage == null)
+                {
+                    dlgMessage = new ErrorWindow("Error", "Error", "Check your e-mail or password", "Okay :(");
+                    dlgMessage.Show();
+                }
+                else
+                {
+                    dlgMessage.Activate();
+                }
+            }
         }
     }
 }
