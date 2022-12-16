@@ -29,6 +29,8 @@ namespace LetsFeedTheCatsProject
             pbPasswordConfirm.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pbCheck.SizeMode = PictureBoxSizeMode.StretchImage;
+
+           
         }
 
         private void linkSignIp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -161,10 +163,10 @@ namespace LetsFeedTheCatsProject
                     dlgMessage.Activate();
                 }
 
-                SignUp SignUpform = new SignUp();
-                this.Hide();
-                SignUpform.ShowDialog();
-                this.Show();
+               // SignUp SignUpform = new SignUp();
+                //this.Hide();
+                //SignUpform.ShowDialog();
+                //this.Show();
             }
             else
             {
@@ -228,6 +230,14 @@ namespace LetsFeedTheCatsProject
                 }
                 return false;
             }
+        }
+
+        private void SignUp_VisibleChanged(object sender, EventArgs e)
+        {
+            tbEmail.Text = string.Empty;
+            tbPassword.Text = string.Empty;
+            tbUsername.Text = string.Empty;
+            tbPasswordConfirm.Text = string.Empty;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace LetsFeedTheCatsProject
         public ErrorWindow(string name, string label, string message, string button)
         {
             InitializeComponent();
-            this.Name = name;
+            this.Text = name;
             this.lblError.Text = label;
             this.lblErrorMessage.Text = message;
             this.btnTryAgain.Text = button;
@@ -27,8 +27,7 @@ namespace LetsFeedTheCatsProject
 
         private void btnTryAgain_Click(object sender, EventArgs e)
         {
-            SignIn dlgSignIn = new SignIn();
-            dlgSignIn.ShowDialog();
+           this.Close();
         }
     }
 }
