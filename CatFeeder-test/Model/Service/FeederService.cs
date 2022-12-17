@@ -8,75 +8,39 @@ namespace Model.Service
 {
     public class FeederService : IFeederService
     {
-        private IRepository<Feeder> _feederrepository;
-        private IRepository<User> _userrepository;
-        public FeederService(IRepository<Feeder> feederrepository, IRepository<User> userrepository) //check for repository injection
+        private IRepository<Feeder> feederRepository;
+        private IRepository<User> userRepository;
+        /*public FeederService(IRepository<Feeder> feederRepository, IRepository<User> userRepository) //check for repository injection
         {
-            _feederrepository = feederrepository;
-            _userrepository = userrepository;
-        }
+            this.feederRepository = feederRepository;
+            this.userRepository = userRepository;
+        }*/
 
-        public short Activate_feeder(string user_id, string feeder_id)
+        public short activateFeeder(string userID, string feederID)
         {
-            /*
-                 Feeder feeder = _feederrepository.Get(feeder_id);
-
-                  if (feeder.User_id != "") return 0;
-              else
-              {
-                      feeder.User_id = user_id;
-                      string cond = "feeder_id = '" + feeder_id + "'";
-                      _feederrepository.Update(feeder, cond);
-                      return 1;        
-              }
-
-                  */
-
-
-
-            Feeder new_feeder = new Feeder(feeder_id, "");
-            if (feeder_id == "") return 0;
+            Feeder newFeeder = new Feeder(feederID, "");
+            if (feederID == "")
+                return 0;
             else
             {
-                new_feeder.User_id = user_id;
-                string cond = "feeder_id = '" + feeder_id + "'";
-                _feederrepository.Add(new_feeder);
+                newFeeder.strUserID = userID;
+                string cond = "feeder_id = '" + feederID + "'";
+                feederRepository.addFeederToDatabase(newFeeder);
                 return 1;
             };
-
-
-
-            /*  if (feeder_id != "" && new_feeder.Name != null)
-              {
-                  new_feeder.User_id = user_id;
-                  string cond = "feeder_id = '" + feeder_id + "'";
-                  _feederrepository.Update(new_feeder, cond);
-                  return 1;
-
-              }       */
-
-
         }
 
-        public short Update_feeder(string feeder_id, string feeder_name) 
+        public short updateFeeder(string feederID, string feederName) 
         {
-
-			if (feeder_name == "")
+			if (feederName == "")
 				return 0;
-			//else
-			//{
 
-			//Feeder feeder = _feederrepository.Get(feeder_id);
-			Feeder feeder = new Feeder(feeder_id, feeder_name);
+			Feeder feeder = new Feeder(feederID, feederName);
+            feeder.strName = feederName;
+            string cond = "feeder_id = '"+feederID+"';";
+            feederRepository.updateFeederInDatabase(feeder, cond);
 
-               
-                    feeder.Name = feeder_name;
-                    string cond = "feeder_id = '"+feeder_id+"';";
-                    _feederrepository.Update(feeder, cond);
-                return 1;
-               
-
-            //}
+            return 1;
         }
 
 

@@ -6,41 +6,41 @@ using System.Text;
 
 namespace Presenter
 {
-    public class addFeederPresenter
+    public class AddFeederPresenter
     {
-        private readonly IKernel _kernel;
-        private Iadd_feeder _view;
-        private IFeederService _feederservice;
+        private readonly IKernel kernel;
+        private IAddFeeder view;
+        private IFeederService feederService;
 
-        private string current_user_id;
+        private string currentUserID;
 
-        public addFeederPresenter(IKernel kernel, Iadd_feeder view, IFeederService feederservice)
+        public AddFeederPresenter(IKernel kernel, IAddFeeder view, IFeederService feederService)
         {
-            _kernel = kernel;
-            _view = view;
-            _feederservice = feederservice;
+            this.kernel = kernel;
+            this.view = view;
+            this.feederService = feederService;
 
-            _view.Show_goback += Show_goback;
-            _view.Add_feeder += Add_feeder;
+            this.view.evShowGoback += showGoback;
+            this.view.evAddFeeder += addFeeder;
         }
 
-        private void Show_goback()
+        private void showGoback()
         {
-            var presenter = _kernel.Get<home_userPresenter>();
-            presenter.Run(current_user_id);
-            _view.Close();
+            var presenter = kernel.Get<HomeUserPresenter>();
+            presenter.Run(currentUserID);
+            view.Close();
         }
 
-        private void Add_feeder(string id)
+        private void addFeeder(string id)
         {
-            short activation_result = _feederservice.Activate_feeder(current_user_id ,id);
-            _view.Activation_result_response(activation_result);
+            short activationResult = feederService.activateFeeder(currentUserID, id);
+            view.Activation_result_response(activationResult);
         }
 
-        public void Run(string username)
+        public void run(string username)
         {
-            current_user_id = username;
-            _view.Show();
+            currentUserID = username;
+            view.Show();
         }
     }
 }

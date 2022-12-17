@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Model.Entity
+﻿namespace Model.Entity
 {
     public class Feeder
     {
-        public Feeder(string quickid, string quickname)
+        public Feeder(string ID, string name)
         {
-            Feeder_id = quickid;
-            Name = quickname;
-            Timetable_id = null;
-            User_id = null;
+            strFeederID = ID;
+            strName = name;
+            strTimetableID = null;
+            strUserID = null;
         }
+        public Feeder() {}
 
-        public Feeder()
-        {
-        }
-
-        public string User_id;
-        public string Feeder_id;
-        public string Timetable_id;
-        public string Name;
+        public string strUserID;
+        public string strFeederID;
+        public string strTimetableID;
+        public string strName;
     }
 }

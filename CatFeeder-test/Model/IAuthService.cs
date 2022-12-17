@@ -6,7 +6,7 @@ namespace Model
 {
     public interface IAuthService
     {
-        short Login(string username, string password);
-        short Register(string username, string password, string confirm_password);
+        short logIn(string username, string password);
+        short register(string username, string password, string confirmPassword);
     }
 }

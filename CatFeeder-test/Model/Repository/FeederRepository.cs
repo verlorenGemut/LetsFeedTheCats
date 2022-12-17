@@ -1,113 +1,107 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Model.Entity;
-using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace Model.Repository
 {
     public class FeederRepository : IRepository<Feeder>
     {
-        private DB DataContext = new DB();
-        public int Add(Feeder obj)
+        private DataBase dataBase = new DataBase();
+        public int addFeederToDatabase(Feeder feeder)
         {
-            string User_id = obj.User_id;
-            string Feeder_id = obj.Feeder_id;
-            string Timetable_id = obj.Timetable_id;
-            string Name = obj.Name;
-            string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "', '" + Name + "')";
-           // string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "')";
-            DataContext.Add("feeders", com);
+            string userID = feeder.strUserID;
+            string feederID = feeder.strFeederID;
+            string timetableID = feeder.strTimetableID;
+            string name = feeder.strName;
+            string data = "('" + feederID + "', '" + userID + "', '" + timetableID + "', '" + name + "')";
+            // string data = "('" + feederID + "', '" + userID + "', '" + timetableID + "')";
+            dataBase.insertData("feeders", data);
+
             return 0;
         }
-        public void Remove(Feeder obj)
+        public void removeFeederFromDatabase(Feeder feeder)
         {
-            string Feeder_id = obj.Feeder_id;
-            string com = "feeder_id = '" + Feeder_id + "'";
-            DataContext.Delete("feeders", com);
+            string feederID = feeder.strFeederID;
+            string data = "feeder_id = '" + feederID + "'";
+            dataBase.deleteData("feeders", data);
         }
-        public void Update(Feeder obj, string cond)
+        public void updateFeederInDatabase(Feeder feeder, string conditions)
         {
 
-            string User_id = obj.User_id;
-            string Feeder_id = obj.Feeder_id;
-            string Timetable_id = obj.Timetable_id;
-            string Name = obj.Name;
-            string com =  "feeder_name = '" + Name + "'";
+            //string User_id = feeder.strUserID;
+            //tring Feeder_id = feeder.strFeederID;
+            //string Timetable_id = feeder.strTimetableID;
+            string name = feeder.strName;
+            string data =  "feeder_name = '" + name + "'";
 
-            DataContext.Update("feeders", com, cond);
+            dataBase.updateData("feeders", data, conditions);
         }
-        public void Save()
-        {
-        }
-        public Feeder Get(string Feeder_id)
+        //public void Save() {}
+        public Feeder getFeederFromDatabase(string feederID)
         {
             DataTable table = new DataTable();
-            string com = "feeder_id= '" + Feeder_id + "'";
-            table = DataContext.Find("feeders", com);
+            string conditions = "feeder_id= '" + feederID + "'";
+            table = dataBase.getAllDataWhere("feeders", conditions);
             Feeder feeder = new Feeder();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var cells = row.ItemArray;
-                    feeder.User_id = cells[0].ToString();
-                    feeder.Feeder_id = cells[1].ToString();
-                    feeder.Timetable_id = cells[2].ToString();
-                    feeder.Name = cells[3].ToString();
+                    var data = row.ItemArray;
+                    feeder.strUserID = data[0].ToString();
+                    feeder.strFeederID = data[1].ToString();
+                    feeder.strTimetableID = data[2].ToString();
+                    feeder.strName = data[3].ToString();
                 }
             }
-            else return null;
+            else
+                return null;
             return feeder;
         }
-        public List<Feeder> GetAll()
+        public List<Feeder> getAllFeeders()
         {
             DataTable table = new DataTable();
-            table = DataContext.GetAll("feeders");
-            List<Feeder> feederList = new List<Feeder>();
+            table = dataBase.getAllData("feeders");
+            List<Feeder> feedersList = new List<Feeder>();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
                     Feeder feeder = new Feeder();
                     var cells = row.ItemArray;
-                    feeder.User_id = cells[1].ToString();
-                    feeder.Feeder_id = cells[0].ToString();
-                    feeder.Timetable_id = cells[2].ToString();
-                    feeder.Name = cells[3].ToString();
-                    feederList.Add(feeder);
+                    feeder.strFeederID = cells[0].ToString();
+                    feeder.strUserID = cells[1].ToString();
+                    feeder.strTimetableID = cells[2].ToString();
+                    feeder.strName = cells[3].ToString();
+                    feedersList.Add(feeder);
                 }
             }
-            else return null;
-            return feederList;
+            else
+                return null;
+            return feedersList;
         }
-        public List<Feeder> GetList(string user_id)
+        public List<Feeder> getFeedersOfUser(string userID)
         {
             DataTable table = new DataTable();
-            string com = "user_id= '" + user_id + "'";
-            table = DataContext.Find("feeders", com);
-            List<Feeder> feederList = new List<Feeder>();
+            string conditions = "user_id= '" + userID + "'";
+            table = dataBase.getAllDataWhere("feeders", conditions);
+            List<Feeder> feedersList = new List<Feeder>();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
                     Feeder feeder = new Feeder();
                     var cells = row.ItemArray;
-                    feeder.User_id = cells[1].ToString();
-                    feeder.Feeder_id = cells[0].ToString();
-                    feeder.Timetable_id = cells[2].ToString();
-                    feeder.Name = cells[3].ToString();
-                    feederList.Add(feeder);
+                    feeder.strFeederID = cells[0].ToString();
+                    feeder.strUserID = cells[1].ToString();
+                    feeder.strTimetableID = cells[2].ToString();
+                    feeder.strName = cells[3].ToString();
+                    feedersList.Add(feeder);
                 }
             }
-            else return null;
-            return feederList;
-        }
-
-        public List<Feeder> GetAll(string id)
-        {
-            throw new NotImplementedException();
+            else
+                return null;
+            return feedersList;
         }
     }
 }

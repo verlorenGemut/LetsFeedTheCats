@@ -6,11 +6,11 @@ namespace Presenter
 {
     
 
-    public interface Ilogin : Iview
+    public interface ILogIn : IView
     {
 
-        event Action<string, string> Show_login;
-        event Action Show_register_screen;
+        event Action<string, string> evShowLogIn;
+        event Action evShowRegisterScreen;
 
     }
 }

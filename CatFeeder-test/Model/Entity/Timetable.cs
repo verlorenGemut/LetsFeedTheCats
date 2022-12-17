@@ -8,18 +8,18 @@ namespace Model.Entity
     {
         public Timetable() { }
 
-        public Timetable(string _feederId, string _name, string _TimetableId,string _time)
+        public Timetable(string feederID, string name, string timetableID,string time)
 		{
-            FeederId = _feederId;
-            name = _name;
-            TimetableId = _TimetableId;
-            time = _time;
+            StrFeederID = feederID;
+            strName = name;
+            strTimetableID = timetableID;
+            strTime = time;
 		}
-        public List<Time> TimeOfFeed { get; set; }
-        public string FeederId { get; set; }
-        public string name { get; set; }
-        public string TimetableId { get; set; }
-        public string time { get; set; }
+        public List<Time> timeToFeed { get; set; }
+        public string StrFeederID { get; set; }
+        public string strName { get; set; }
+        public string strTimetableID { get; set; }
+        public string strTime { get; set; }
 
     }
 }

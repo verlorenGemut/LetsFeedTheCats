@@ -10,16 +10,16 @@ using Presenter;
 
 namespace CatFeeder
 {
-    public partial class feeder_id_list : Form, Ifeeder_id_list
+    public partial class Feeder_ID_list : Form, IFeederIDlist
     {
-        public feeder_id_list()
+        public Feeder_ID_list()
         {
             InitializeComponent();
         }
 
-        public event Action Show_goback;
-        public event Action<string> Add_feeder;
-        public event Action<string> Remove_feeder;
+        public event Action evShowGoback;
+        public event Action<string> evAddFeeder;
+        public event Action<string> evRemoveFeeder;
 
         private void feeder_id_list_Load(object sender, EventArgs e)
         {
@@ -28,65 +28,65 @@ namespace CatFeeder
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Show_goback?.Invoke();
+            evShowGoback?.Invoke();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            Add_feeder?.Invoke(feeder_id_txtbx.Text);
+            evAddFeeder?.Invoke(feeder_id_txtbx.Text);
         }
 
         public void display_GLOBAL_feeder_list(List<Feeder> GLOBAL_feederlist)
         {
 
-            Controls["feeder_ids"].Controls.Clear();
+            Controls["feederIDs"].Controls.Clear();
 
             if (GLOBAL_feederlist == null) return;
             int size = GLOBAL_feederlist.Count;
 
             int i;
 
-            List<Button> remove_buttons = new List<Button>();
-            List<Label> feeder_names = new List<Label>();
-            List<Label> feeder_ids = new List<Label>();
-            List<Label> feeder_owners = new List<Label>();
+            List<Button> removeButtons = new List<Button>();
+            List<Label> feederNames = new List<Label>();
+            List<Label> feederIDs = new List<Label>();
+            List<Label> feederOwners = new List<Label>();
 
             for (i = 0; i < size; i++)
             {
-                remove_buttons.Add(new Button());
-                remove_buttons[i].Tag = GLOBAL_feederlist[i].Feeder_id;
-                remove_buttons[i].Click += (sender, e) =>
+                removeButtons.Add(new Button());
+                removeButtons[i].Tag = GLOBAL_feederlist[i].strFeederID;
+                removeButtons[i].Click += (sender, e) =>
                 {
                     Button _sender = (Button)sender;
-                    Remove_feeder?.Invoke((string)_sender.Tag);
+                    evRemoveFeeder?.Invoke((string)_sender.Tag);
                 };
-                remove_buttons[i].Location = new Point(380, 35 * i);
-                remove_buttons[i].Width = 100;
-                remove_buttons[i].Visible = true;
-                remove_buttons[i].Text = "Удалить";
-                Controls["feeder_ids"].Controls.Add(remove_buttons[i]);
+                removeButtons[i].Location = new Point(380, 35 * i);
+                removeButtons[i].Width = 100;
+                removeButtons[i].Visible = true;
+                removeButtons[i].Text = "Delete";
+                Controls["feederIDs"].Controls.Add(removeButtons[i]);
 
 
-                feeder_names.Add(new Label());
-                feeder_names[i].Location = new Point(0, 35 * i);
-                feeder_names[i].Width = 100;
-                feeder_names[i].Visible = true;
-                feeder_names[i].Text = GLOBAL_feederlist[i].Name;
-                Controls["feeder_ids"].Controls.Add(feeder_names[i]);
+                feederNames.Add(new Label());
+                feederNames[i].Location = new Point(0, 35 * i);
+                feederNames[i].Width = 100;
+                feederNames[i].Visible = true;
+                feederNames[i].Text = GLOBAL_feederlist[i].strName;
+                Controls["feederIDs"].Controls.Add(feederNames[i]);
 
-                feeder_ids.Add(new Label());
-                feeder_ids[i].Location = new Point(110, 35 * i);
-                feeder_ids[i].Width = 100;
-                feeder_ids[i].Visible = true;
-                feeder_ids[i].Text = GLOBAL_feederlist[i].Feeder_id;
-                Controls["feeder_ids"].Controls.Add(feeder_ids[i]);
+                feederIDs.Add(new Label());
+                feederIDs[i].Location = new Point(110, 35 * i);
+                feederIDs[i].Width = 100;
+                feederIDs[i].Visible = true;
+                feederIDs[i].Text = GLOBAL_feederlist[i].strFeederID;
+                Controls["feederIDs"].Controls.Add(feederIDs[i]);
 
-                feeder_owners.Add(new Label());
-                feeder_owners[i].Location = new Point(220, 35 * i);
-                feeder_owners[i].Width = 100;
-                feeder_owners[i].Visible = true;
-                feeder_owners[i].Text = GLOBAL_feederlist[i].User_id;
-                Controls["feeder_ids"].Controls.Add(feeder_owners[i]);
+                feederOwners.Add(new Label());
+                feederOwners[i].Location = new Point(220, 35 * i);
+                feederOwners[i].Width = 100;
+                feederOwners[i].Visible = true;
+                feederOwners[i].Text = GLOBAL_feederlist[i].strUserID;
+                Controls["feederIDs"].Controls.Add(feederOwners[i]);
             }
         }
     }

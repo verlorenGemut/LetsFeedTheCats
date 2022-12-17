@@ -6,8 +6,8 @@ namespace Model
 {
     public interface IFeederService
     {
-        short Activate_feeder(string user_id, string feeder_id);
-        short Update_feeder(string feeder_id, string feeder_name);
+        short activateFeeder(string userID, string feederID);
+        short updateFeeder(string feederID, string feederName);
     }
 
 }

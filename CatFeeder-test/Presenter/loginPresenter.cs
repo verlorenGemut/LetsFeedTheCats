@@ -7,47 +7,47 @@ using Ninject;
 
 namespace Presenter
 {
-    public class loginPresenter
+    public class LogInPresenter
     {
-        private readonly IKernel _kernel;
-        private Ilogin _view;
-        private IAuthService _authservice;
+        private readonly IKernel kernel;
+        private ILogIn view;
+        private IAuthService authService;
 
 
-        public loginPresenter(IKernel kernel, Ilogin view, IAuthService authservice)
+        public LogInPresenter(IKernel kernel, ILogIn view, IAuthService authservice)
         {
-            _kernel = kernel;
-            _view = view;
-            _authservice = authservice;
+            this.kernel = kernel;
+            this.view = view;
+            authService = authservice;
 
-            _view.Show_login += Show_login;
-            _view.Show_register_screen += Show_register_screen;
+            this.view.evShowLogIn += showLogIn;
+            this.view.evShowRegisterScreen += showRegisterScreen;
         }
 
-        private void Show_register_screen()
+        private void showRegisterScreen()
         {
-            var presenter = _kernel.Get<reg_screenPresenter>();
+            var presenter = kernel.Get<RegistrationScreenPresenter>();
             presenter.Run();
-            _view.Close();
+            view.Close();
         }
 
-        private void Show_login(string username, string password)
+        private void showLogIn(string username, string password)
         {
-            short user_type = _authservice.Login(username, password); //если выдаёт не 1 и не 2 ( 0 ), то данные для входа неверны
-																	  //var presenter = _kernel.Get<home_userPresenter>();
+            short user_type = authService.logIn(username, password); //если выдаёт не 1 и не 2 ( 0 ), то данные для входа неверны
+																	  //var presenter = kernel.Get<HomeSserPresenter>();
 																	  //presenter.Run(username);
 																	  //_view.Close();
 			if (user_type == 1)
 			{
-				var presenter = _kernel.Get<home_userPresenter>();
+				var presenter = kernel.Get<HomeUserPresenter>();
 				presenter.Run(username);
-				_view.Close();
+				view.Close();
 			}
 			else if (user_type == 2)
 			{
-				var presenter = _kernel.Get<home_adminPresenter>();
+				var presenter = kernel.Get<HomeAdminPresenter>();
 				presenter.Run(username);
-				_view.Close();
+				view.Close();
 			}
 			else
 				MessageBox.Show("Wrong login or password!", " Try again!", MessageBoxButtons.OK); //вынести в view
@@ -55,7 +55,7 @@ namespace Presenter
 
 		public void Run()
         {
-            _view.Show();
+            view.Show();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Presenter
 {
-    public interface Iview
+    public interface IView
     {
         void Show();
         void Close();

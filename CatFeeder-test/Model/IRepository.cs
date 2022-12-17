@@ -7,13 +7,13 @@ namespace Model
 {
     public interface IRepository<T> where T : class
     {
-        int Add(T obj);
-        void Remove(T obj);
-        void Update(T obj, string cond);
+        int addFeederToDatabase(T obj);
+        void removeFeederFromDatabase(T obj);
+        void updateFeederInDatabase(T obj, string conditions);
 
-        List<T> GetList(string id);
-        List<T> GetAll();
-        T Get(string id);
+        List<T> getFeedersOfUser(string id);
+        List<T> getAllFeeders();
+        T getFeederFromDatabase(string id);
     }
 }
 
