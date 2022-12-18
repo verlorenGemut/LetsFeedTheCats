@@ -1,205 +1,207 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Model.Entity;
+using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Model.Repository
 {
     public class TimetableRepository : IRepository<Timetable>
     {
-        private DataBase dataBase = new DataBase();
-        public int addFeederToDatabase(Timetable timetable)
+        private DB DataContext = new DB();
+
+        public int Add(Timetable obj)
         {
-            string feederID = timetable.StrFeederID;
-            string timetableID = timetable.strTimetableID;
-            string name = timetable.strName;
-            string time = timetable.strTime;
-            List<Time> timeToFeed = timetable.timeToFeed;
-            string data = "('" + timetableID + "', '" + feederID + "', '" + name +"', '" + time + "')";
-            if (timeToFeed != null)
+            string FeederId = obj.FeederId;
+            string TimetableId = obj.TimetableId;
+            string name = obj.name;
+            string time = obj.time;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "('" + TimetableId + "', '" + FeederId + "', '" + name+"', '" + time + "')";
+            if (TimeOfFeed != null)
             {
-                foreach (Time t in timeToFeed)
+                foreach (Time t in TimeOfFeed)
                 {
-                    string data2 = "('" + t.strTime + "', '" + timetableID + "')";
-                    string columns = "(time, timetable_id)";
-                    dataBase.insertSomeData("timestamps", data2, columns);
+                    string com_2 = "('" + t.TimeHMS + "', '" + TimetableId + "')";
+                    string com_3 = "(time, timetable_id)";
+                    DataContext.Add("timestamps", com_2, com_3);
                 }
             }
-            dataBase.insertData("timetable", data);
+            DataContext.Add("timetable", com);
             return 0;
         }
 
-        public void removeFeederFromDatabase(Timetable timetable)
+        public void Remove(Timetable obj)
         {
-            string timetableID = timetable.strTimetableID;
-            List<Time> timeToFeed = timetable.timeToFeed;
-            string conditions = "timetable_id = '" + timetableID + "'";
-            if (timeToFeed != null)
+            string TimetableId = obj.TimetableId;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "timetable_id = '" + TimetableId + "'";
+            if (TimeOfFeed != null)
             {
-                foreach (Time t in timeToFeed)
+                foreach (Time t in TimeOfFeed)
                 {
-                    string conditions2 = "timetable_id = '" + timetableID + "'";
-                    dataBase.deleteData("timestamps", conditions2);
+                    string com_2 = "timetable_id = '" + TimetableId + "'";
+                    DataContext.Delete("timestamps", com_2);
                 }
             } 
-            dataBase.deleteData("timetable", conditions);
+            DataContext.Delete("timetable", com);
         }
-        public void updateFeederInDatabase(Timetable timetable, string conditions)
+        public void Update(Timetable obj, string cond)
         {
-            string FeederId = timetable.StrFeederID;
-            string TimetableId = timetable.strTimetableID;
-            string name = timetable.strName;
-            string time = timetable.strTime;
-            List<Time> timeToFeed = timetable.timeToFeed;
-            string newData = "timetable_id = '" + TimetableId + "', feeder_id = '" + FeederId + "', timetable_name = '"
+            string FeederId = obj.FeederId;
+            string TimetableId = obj.TimetableId;
+            string name = obj.name;
+            string time = obj.time;
+            List<Time> TimeOfFeed = obj.TimeOfFeed;
+            string com = "timetable_id = '" + TimetableId + "', feeder_id = '" + FeederId + "', timetable_name = '"
                 + name + "', time = '"+time+"'";
-            dataBase.updateData("timetable", newData, conditions);
+            DataContext.Update("timetable", com, cond);
              
-            string command = "timetable_id = '" + TimetableId + "'";
-            dataBase.deleteData("timestamps", command);
+            string com_2 = "timetable_id = '" + TimetableId + "'";
+            DataContext.Delete("timestamps", com_2);
 
-            if (timeToFeed != null)
+            if (TimeOfFeed != null)
             {
-                foreach (Time t in timeToFeed)
+                foreach (Time t in TimeOfFeed)
                 {
-                    command = "('" + t.strTime + "', '" + TimetableId + "')";
-                    string columns = "(time, timetable_id)";
-                    dataBase.insertSomeData("timestamps", command, columns);
+                    com_2 = "('" + t.TimeHMS + "', '" + TimetableId + "')";
+                    string com_3 = "(time, timetable_id)";
+                    DataContext.Add("timestamps", com_2, com_3);
                 }
             }
 
         }
+        public void Save()
+        {
+        }
 
-        public Timetable getFeederFromDatabase(string timetableID)
+        public Timetable Get(string timetable_id)
         {
             DataTable table = new DataTable();
-            string conditions = "timetable_id= '" + timetableID + "'";
-            table = dataBase.getAllDataWhere("timetable", conditions);
+            string com = "timetable_id= '" + timetable_id + "'";
+            table = DataContext.Find("timetable", com);
             Timetable timetable = new Timetable();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var data = row.ItemArray;
-                    timetable.strTimetableID = data[0].ToString();
-                    timetable.StrFeederID = data[1].ToString();
-                    timetable.strName = data[2].ToString();
+                    var cells = row.ItemArray;
+                    timetable.TimetableId = cells[0].ToString();
+                    timetable.FeederId = cells[1].ToString();
+                    timetable.name = cells[2].ToString();
                 }
             }
-            else
-                return null;
-
-            conditions = "timetable_id= '" + timetableID + "'";
-            table = dataBase.getAllDataWhere("timestamps", conditions);
-            List<Time> listTimesToFeed = new List<Time>();
+            else return null;
+            com = "timetable_id= '" + timetable_id + "'";
+            table = DataContext.Find("timestamps", com);
+            List<Time> TimeOfFeed = new List<Time>();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var data = row.ItemArray;
+                    var cells = row.ItemArray;
                     Time time = new Time("1");
-                    time.ID = (int)data[0];
-                    time.strTime = data[1].ToString();
-                    listTimesToFeed.Add(time);
+                    time.Id = (int)cells[0];
+                    time.TimeHMS = cells[1].ToString();
+                    TimeOfFeed.Add(time);
                 }
             }
-            else timetable.timeToFeed = null;
-            timetable.timeToFeed = listTimesToFeed;
+            else timetable.TimeOfFeed = null;
+            timetable.TimeOfFeed = TimeOfFeed;
             return timetable;
         }
 
-        public List<Timetable> getAllFeeders()
+        public List<Timetable> GetAll()
         {
             DataTable table = new DataTable();
-            table = dataBase.getAllData("timetable");
+            table = DataContext.GetAll("timetable");
             List<Timetable> timetableList = new List<Timetable>();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var data = row.ItemArray;
+                    var cells = row.ItemArray;
                     Timetable timetable = new Timetable();
-                    timetable.strTimetableID = data[0].ToString();
-                    timetable.StrFeederID = data[1].ToString();
-                    timetable.strName = data[2].ToString();
+                    timetable.TimetableId = cells[0].ToString();
+                    timetable.FeederId = cells[1].ToString();
+                    timetable.name = cells[2].ToString();
 
                     //
-                    string conditions = "timetable_id= '" + timetable.strTimetableID + "'";
-                    DataTable tableIn = new DataTable();
-                    tableIn = dataBase.getAllDataWhere("timestamps", conditions);
-                    List<Time> listTimesToFeed = new List<Time>();
-                    if (tableIn.Rows.Count > 0)
+                    string com = "timetable_id= '" + timetable.TimetableId + "'";
+                    DataTable table_in = new DataTable();
+                    table_in = DataContext.Find("timestamps", com);
+                    List<Time> TimeOfFeed = new List<Time>();
+                    if (table_in.Rows.Count > 0)
                     {
-                        foreach (DataRow rowIn in tableIn.Rows)
+                        foreach (DataRow row_in in table_in.Rows)
                         {
-                            var dataIn = rowIn.ItemArray;
+                            var cells_in = row_in.ItemArray;
                             Time time = new Time("1");
-                            time.ID = (int)data[0];
-                            time.strTime = dataIn[1].ToString();
-                            listTimesToFeed.Add(time);
+                            time.Id = (int)cells[0];
+                            time.TimeHMS = cells_in[1].ToString();
+                            TimeOfFeed.Add(time);
                         }
                     }
-                    else
-                        timetable.timeToFeed = null;
-
-                    timetable.timeToFeed = listTimesToFeed;
+                    else timetable.TimeOfFeed = null;
+                    timetable.TimeOfFeed = TimeOfFeed;
                     timetableList.Add(timetable);
                 }
             }
-            else
-                return null;
+            else return null;
  
             return timetableList;
         }
-        public List<Timetable> getFeedersOfUser(string feederID)
+        public List<Timetable> GetList(string feeder_id)
         {
 			DataTable table = new DataTable();
-			string conditions = "feeder_id= '" + feederID + "'";
-			table = dataBase.getAllDataWhere("timetable", conditions);
-			List<Timetable> listTimetables = new List<Timetable>();
+			string command = "feeder_id= '" + feeder_id + "'";
+			table = DataContext.Find("timetable", command);
+			List<Timetable> timetableList = new List<Timetable>();
 			if (table.Rows.Count > 0)
 			{
 				foreach (DataRow row in table.Rows)
 				{
-					var data = row.ItemArray;
+					var cells = row.ItemArray;
 					Timetable timetable = new Timetable();
-					timetable.strTimetableID = data[0].ToString();
-					timetable.StrFeederID = data[1].ToString();
-					timetable.strName = data[2].ToString();
-					timetable.strTime = data[3].ToString();
+					timetable.TimetableId = cells[0].ToString();
+					timetable.FeederId = cells[1].ToString();
+					timetable.name = cells[2].ToString();
+					timetable.time = cells[3].ToString();
 
 
-					string conditions2 = "timetable_id= '" + timetable.strTimetableID + "'";
-					DataTable tableIn = new DataTable();
-					tableIn = dataBase.getAllDataWhere("timestamps", conditions2);
-					List<Time> listTimesToFeed = new List<Time>();
-					if (tableIn.Rows.Count > 0)
+					string com = "timetable_id= '" + timetable.TimetableId + "'";
+					DataTable table_in = new DataTable();
+					table_in = DataContext.Find("timestamps", com);
+					List<Time> TimeOfFeed = new List<Time>();
+					if (table_in.Rows.Count > 0)
 					{
-						foreach (DataRow rowIn in tableIn.Rows)
+						foreach (DataRow row_in in table_in.Rows)
 						{
-							var dataIn = rowIn.ItemArray;
+							var cells_in = row_in.ItemArray;
 							Time time = new Time("1");
-							time.ID = Convert.ToInt32(data[0]);
-							time.strTime = dataIn[1].ToString();
-							listTimesToFeed.Add(time);
+							time.Id = Convert.ToInt32(cells[0]);
+							time.TimeHMS = cells_in[1].ToString();
+							TimeOfFeed.Add(time);
 						}
 					}
-					else
-                        timetable.timeToFeed = null;
-
-					timetable.timeToFeed = listTimesToFeed;
-					listTimetables.Add(timetable);
+					else timetable.TimeOfFeed = null;
+					timetable.TimeOfFeed = TimeOfFeed;
+					timetableList.Add(timetable);
 				}
 			}
-			else
-                return null;
+			else return null;
 
-			return listTimetables;
+			return timetableList;
         }
-        /*public List<Timetable> GetAll(string id)
+
+      
+
+        public List<Timetable> GetAll(string id)
         {
             throw new NotImplementedException();
-        }*/
+        }
 
     }
 }

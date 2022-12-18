@@ -2,6 +2,9 @@
 using System;
 
 using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using System.Data;
 /*
 
@@ -19,91 +22,107 @@ namespace Model.Repository
 {
     public class UserRepository : IRepository<User>
     {
-        private DataBase dataBase = new DataBase();
+        private DB DataContext = new DB();
        // private User user;
 
-        public User getFeederFromDatabase(string username)
+        public User Get(string username)
         {
             DataTable table = new DataTable();
-            string conditions = "user_id= '" + username + "'";
-            table = dataBase.getAllDataWhere("users", conditions);
+            string com = "user_id= '" + username + "'";
+            table = DataContext.Find("users", com);
             User user = new User();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
-                    var data = row.ItemArray;
-                    user.strUsername = data[0].ToString();
-                    user.shAccountTYpe =Convert.ToInt16(data[1]);
-                    user.strPasswordHashed = data[2].ToString();
-                    user.strPasswordSalt = data[3].ToString();
+                    var cells = row.ItemArray;
+                    user.username = cells[0].ToString();
+                    user.account_type =Convert.ToInt16(cells[1]);
+                    user.password_hash = cells[2].ToString();
+                    user.password_salt = cells[3].ToString();
                 }
             }
+            else return null;
+            /*user.username = username;
+            if (username == "admin")
+            {
+                user.password_hash = "j32jf22";
+                user.password_salt = "admin"; //тут должно быть хэширование
+                user.account_type = 2;
+            }
+            else if (username == "test")
+            {
+                user.password_hash = "jfs8fds3";
+                user.password_salt = "test"; 
+                user.account_type = 1;
+            }
             else
-                return null;
-
+            {
+                user.password_hash = "0";
+            }*/
             return user;
         }
 
-        public void removeFeederFromDatabase(User user)
+        public void Remove(User obj)
         {
-            string username = user.strUsername;
-            string conditions = "user_id = '" + username + "'";
-            dataBase.deleteData("users", conditions);
+            string username = obj.username;
+            string com = "user_id = '" + username + "'";
+            DataContext.Delete("users", com);
         }
-        public int addFeederToDatabase(User user)
+        public int Add(User obj)
         {
-            string username = user.strUsername;
-            short accountType = user.shAccountTYpe;
-            string passwordHash = user.strPasswordHashed;
-            string passwordSalt = user.strPasswordSalt;
-            string data = "('" + username + "','" + accountType + "','" + passwordHash +"','" + passwordSalt + "');";
-            dataBase.insertData("users", data);
+            string username = obj.username;
+            short account_type = obj.account_type;
+            string password_hash = obj.password_hash;
+            string password_salt = obj.password_salt;
+            //string com = "('29', 2, '123', '3');"; 
+            string com = "('" + username + "','" + account_type + "','" + password_hash +"','" + password_salt + "');";
+           // string com = "('" + username + "','" + account_type + "');";
+            DataContext.Add("users", com);
             return 0;
         }
-        public void updateFeederInDatabase(User user, string conditions)
+        public void Update(User obj, string cond)
         {
-            string username = user.strUsername;
-            short accountType = user.shAccountTYpe;
-            string passwordHash = user.strPasswordHashed;
-            string passwordSalt = user.strPasswordSalt;
-            string data = "user_id = '" + username + "', user_type = '" + accountType + "', user_password_hash = '" 
-                + passwordHash + "', user_password_salt = '" + passwordSalt + "'";
-            dataBase.updateData("users", data, conditions);
+            string username = obj.username;
+            short account_type = obj.account_type;
+            string password_hash = obj.password_hash;
+            string password_salt = obj.password_salt;
+            string com = "user_id = '" + username + "', user_type = '" + account_type + "', user_password_hash = '" 
+                + password_hash + "', user_password_salt = '" + password_salt + "'";
+            DataContext.Update("users", com, cond);
         }
-        public List<User> getAllFeeders()
+        public List<User> GetAll()
         {
             DataTable table = new DataTable();
-            table = dataBase.getAllData("users");
-            List<User> listUsers = new List<User>();
+            table = DataContext.GetAll("users");
+            List<User> userList = new List<User>();
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
                 {
                     User user = new User();
-                    var data = row.ItemArray;
-                    user.strUsername = data[0].ToString();
-                    user.shAccountTYpe = (short)data[1];
-                    user.strPasswordHashed = data[2].ToString();
-                    user.strPasswordSalt = data[3].ToString();
-                    listUsers.Add(user);
+                    var cells = row.ItemArray;
+                    user.username = cells[0].ToString();
+                    user.account_type = (short)cells[1];
+                    user.password_hash = cells[2].ToString();
+                    user.password_salt = cells[3].ToString();
+                    userList.Add(user);
                 }
             }
-            else
-                return null;
-            return listUsers;
+            else return null;
+            return userList;
         }
-        /*public void Save()
+        public void Save()
         {
             throw new NotImplementedException();
-        }*/
+        }
 
-       /* public List<User> GetAll(string id)
+        public List<User> GetAll(string id)
         {
             throw new NotImplementedException();
-        }*/
+        }
 
-        public List<User> getFeedersOfUser(string id)
+        public List<User> GetList(string id)
         {
             throw new NotImplementedException();
         }

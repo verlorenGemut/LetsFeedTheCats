@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace CatFeeder
 {
-    public partial class Form1 : Form, ILogIn
+    public partial class Form1 : Form, Ilogin
     {
-        private readonly ApplicationContext context;
+        private readonly ApplicationContext _context;
 
-        public event Action<string, string> evShowLogIn;
-        public event Action evShowRegisterScreen;
+        public event Action<string, string> Show_login;
+        public event Action Show_register_screen;
 
         public Form1(ApplicationContext context)
         {
-            this.context = context;
+            _context = context;
             InitializeComponent();
         }
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            evShowLogIn?.Invoke(username_txtbx.Text, password_txtbx.Text);
+            Show_login?.Invoke(username_txtbx.Text, password_txtbx.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace CatFeeder
 
         private void no_account_btn_Click(object sender, EventArgs e)
         {
-            evShowRegisterScreen?.Invoke();
+            Show_register_screen?.Invoke();
         }
     }
 }

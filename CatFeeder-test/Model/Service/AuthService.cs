@@ -1,8 +1,10 @@
 ﻿using Model.Entity;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Model.Service
 {
@@ -12,57 +14,52 @@ namespace Model.Service
 
         private static Random random = new Random();
 
-        private IRepository<User> userRepository;
-       /* public AuthService(IRepository<User> userRepository)
+        private IRepository<User> _userrepository;
+        public AuthService(IRepository<User> userrepository)
         {
-            this.userRepository = userRepository;
-        }*/
-        public short logIn(string username, string password)
+            _userrepository = userrepository;
+        }
+        public short Login(string username, string password)
         {
-            if (username == null)
-                return 0;
+            if (username == null) return 0;
 
-            User user = userRepository.getFeederFromDatabase(username);
+            User user = _userrepository.Get(username);
 
-            if (user == null)
-                return 0;
+            if (user == null) return 0;
 
-            password += user.strPasswordSalt;
+            password += user.password_salt;
 
             
-            if (verifyHash(sha256Hash, password, user.strPasswordHashed))
+
+            if (VerifyHash(sha256Hash, password, user.password_hash))
             {
-                return user.shAccountTYpe; 
+                return user.account_type; 
             }
             return 0; 
         }
 
-        public short register(string username, string password, string confirmPassword)
+        public short Register(string username, string password, string confirm_password)
         {
 
-            if (username == null)
-                return 1;
+            if (username == null) return 1;
 
-            User user = userRepository.getFeederFromDatabase(username);
-            if (user != null)
-                return 2;
-            else if (password.Length < 8)
-                return 3;
+            User user = _userrepository.Get(username);
+            if (user != null) return 2;
+            else if (password.Length < 8) return 3;
 
-            string salt = getRandomString(5);
+            string salt = RandomString(5);
 
             password += salt;
-            confirmPassword += salt;
+            confirm_password += salt;
 
-            string passwordHash = getHash(sha256Hash, password);
+            string pass_hash = GetHash(sha256Hash, password);
 
-            if (verifyHash(sha256Hash, confirmPassword, passwordHash))
+            if (VerifyHash(sha256Hash, confirm_password, pass_hash))
             {
                 short user_type = 1;
-                if (username == "admin")
-                    user_type = 2;
-                User new_user = new User(username, passwordHash, salt, user_type);
-                userRepository.addFeederToDatabase(new_user);
+                if (username == "admin") user_type = 2;
+                User new_user = new User(username, pass_hash, salt, user_type);
+                _userrepository.Add(new_user);
                 return 0;
             }
             else
@@ -72,7 +69,7 @@ namespace Model.Service
 
         }
 
-        private static string getHash(HashAlgorithm hashAlgorithm, string input)
+        private static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {
             // Convert the input string to a byte array and compute the hash.
             byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
@@ -89,15 +86,15 @@ namespace Model.Service
             return sBuilder.ToString();
         }
 
-        private static bool verifyHash(HashAlgorithm hashAlgorithm, string input, string hash)
+        private static bool VerifyHash(HashAlgorithm hashAlgorithm, string input, string hash)
         {
-            var hashOfInput = getHash(hashAlgorithm, input);
+            var hashOfInput = GetHash(hashAlgorithm, input);
             // Create a StringComparer an compare the hashes.
             StringComparer comparer = StringComparer.OrdinalIgnoreCase;
             return comparer.Compare(hashOfInput, hash) == 0;
         }
 
-        public static string getRandomString(int length)
+        public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());

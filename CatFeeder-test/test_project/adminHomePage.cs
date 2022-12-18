@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace test_project
 {
-    public partial class AdminHomePage : Form, IHomeAdmin
+    public partial class adminHomePage : Form, Ihome_admin
     {
-        public event Action evShowLogOut;
-        public event Action evShowFeederIDiist;
+        public event Action Show_logout;
+        public event Action Show_feeder_id_list;
 
-        private readonly ApplicationContext context;
-        public AdminHomePage(ApplicationContext context)
+        private readonly ApplicationContext _context;
+        public adminHomePage(ApplicationContext context)
         {
-            this.context = context;
+            _context = context;
             InitializeComponent();
         }
 
@@ -28,12 +28,12 @@ namespace test_project
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
-            evShowLogOut?.Invoke();
+            Show_logout?.Invoke();
         }
 
         private void Manage_feeder_ids_btn_Click(object sender, EventArgs e)
         {
-            evShowFeederIDiist?.Invoke();
+            Show_feeder_id_list?.Invoke();
         }
 
 		private void label4_Click(object sender, EventArgs e)

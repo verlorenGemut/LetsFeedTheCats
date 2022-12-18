@@ -1,6 +1,6 @@
 ﻿namespace CatFeeder
 {
-    partial class Feeder_ID_list
+    partial class feeder_id_list
     {
         /// <summary>
         /// Required designer variable.
@@ -83,8 +83,8 @@
 			this.Controls.Add(this.feeder_id_txtbx);
 			this.Controls.Add(this.back_btn);
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.Name = "Feeder_ID_list";
-			this.Text = "Feeder_ID_list";
+			this.Name = "feeder_id_list";
+			this.Text = "feeder_id_list";
 			this.Load += new System.EventHandler(this.feeder_id_list_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

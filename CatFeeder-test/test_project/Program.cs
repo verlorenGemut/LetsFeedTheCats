@@ -26,15 +26,15 @@ namespace CatFeeder
             Ninject.StandardKernel kernel = new StandardKernel();
             kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
 
-            kernel.Bind<IHomeUser>().To<HomeUser>();
-            kernel.Bind<ILogIn>().To<Form1>();
-            kernel.Bind<IAddFeeder>().To<AddFeeder>();
-            kernel.Bind<IManageTimetables>().To<ManageTimetables>();
-            kernel.Bind<IEditTimetable>().To<EditTimetable>();
-            kernel.Bind<IHomeAdmin>().To<HomeAdmin>();
-            kernel.Bind<IEditFeeder>().To<EditFeeder>();
-            kernel.Bind<IRegistrationScreen>().To<RegistrationScreen>();
-            kernel.Bind<IFeederIDlist>().To<Feeder_ID_list>();
+            kernel.Bind<Ihome_user>().To<home_user>();
+            kernel.Bind<Ilogin>().To<Form1>();
+            kernel.Bind<Iadd_feeder>().To<add_feeder>();
+            kernel.Bind<Imanage_timetables>().To<manage_timetables>();
+            kernel.Bind<Iedit_timetable>().To<edit_timetable>();
+            kernel.Bind<Ihome_admin>().To<home_admin>();
+            kernel.Bind<Iedit_feeder>().To<edit_feeder>();
+            kernel.Bind<Ireg_screen>().To<reg_screen>();
+            kernel.Bind<Ifeeder_id_list>().To<feeder_id_list>();
 
             kernel.Bind<IFeederService>().To<FeederService>();
             kernel.Bind<IAuthService>().To<AuthService>();
@@ -48,7 +48,7 @@ namespace CatFeeder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            kernel.Get<LogInPresenter>().Run();
+            kernel.Get<loginPresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());
 
             

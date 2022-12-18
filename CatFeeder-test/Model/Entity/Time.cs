@@ -1,27 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Model.Entity
 {
     public class Time : ITime
     {
-        public string strTime { get; set; }
-        public int ID;
+        public string TimeHMS { get; set; }
+        public int Id;
 
-        /*public Time()
+        public Time()
         {
-            strTime = DateTime.Now.ToString("HH:mm");
-        }*/
-        public Time(string time) {}
-        /*public string getTimeInHHMMSS()
+            TimeHMS = DateTime.Now.ToString("HH:mm");
+        }
+        public Time(string t)
         {
-            return strTime;
-        }*/
+        }
+        public string Get_TimeHMS()
+        {
+            return this.TimeHMS;
+        }
 
-       /* public bool compareTime(Time time2)
+        public bool CompareTimeHMS(Time t2)
         {
-            if (strTime == time2.strTime)
-                return true;
+            if (this.TimeHMS == t2.TimeHMS) return true;
             return false;
-        }*/
+        }
     }
 }
