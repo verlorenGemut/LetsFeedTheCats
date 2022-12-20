@@ -16,8 +16,8 @@ namespace Model.Repository
             string Feeder_id = obj.Feeder_id;
             string Timetable_id = obj.Timetable_id;
             string Name = obj.Name;
-            string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "', '" + Name + "')";
-           // string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "')";
+            //string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "', '" + Name + "')";
+            string com = "('" + Feeder_id + "', '" + User_id + "', '" + Timetable_id + "')";
             DataContext.Add("feeders", com);
             return 0;
         }

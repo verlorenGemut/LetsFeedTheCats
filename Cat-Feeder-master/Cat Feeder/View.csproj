@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{813995E5-1772-4C65-A15A-B05F75C1B03C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cat_Feeder</RootNamespace>
+    <AssemblyName>Cat Feeder</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminPageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminPageView.designer.cs">
+      <DependentUpon>AdminPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirstPageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstPageView.Designer.cs">
+      <DependentUpon>FirstPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserFeedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserFeedView.Designer.cs">
+      <DependentUpon>UserFeedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLogsFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogsFormView.Designer.cs">
+      <DependentUpon>AdminLogsFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserMakeMarkFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserMakeMarkFormView.Designer.cs">
+      <DependentUpon>UserMakeMarkFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMonitorFeedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMonitorFeedView.Designer.cs">
+      <DependentUpon>AdminMonitorFeedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminRegFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminRegFormView.Designer.cs">
+      <DependentUpon>AdminRegFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserTimetableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserTimetableView.Designer.cs">
+      <DependentUpon>UserTimetableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminTimetableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminTimetableView.Designer.cs">
+      <DependentUpon>AdminTimetableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserFeederChoiseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserFeederChoiseView.Designer.cs">
+      <DependentUpon>UserFeederChoiseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserLogsFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserLogsFormView.designer.cs">
+      <DependentUpon>UserLogsFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserMainPageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserMainPageView.Designer.cs">
+      <DependentUpon>UserMainPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\AdminPageView.resx">
+      <DependentUpon>AdminPageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserFeedView.resx">
+      <DependentUpon>UserFeedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstPageView.resx">
+      <DependentUpon>FirstPageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminLogsFormView.resx">
+      <DependentUpon>AdminLogsFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserMakeMarkFormView.resx">
+      <DependentUpon>UserMakeMarkFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminMonitorFeedView.resx">
+      <DependentUpon>AdminMonitorFeedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminRegFormView.resx">
+      <DependentUpon>AdminRegFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserTimetableView.resx">
+      <DependentUpon>UserTimetableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminTimetableView.resx">
+      <DependentUpon>AdminTimetableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserFeederChoiseView.resx">
+      <DependentUpon>UserFeederChoiseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserLogsFormView.resx">
+      <DependentUpon>UserLogsFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserMainPageView.resx">
+      <DependentUpon>UserMainPageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\Feed2.png" />
+    <Content Include="images\Feet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{c1e41f9d-1e90-4743-bdd2-27d8c6343aa9}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model1\Model.csproj">
+      <Project>{64f3214a-d2c2-4bed-8fde-4a250701d34c}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation\Presentation.csproj">
+      <Project>{798c91af-623f-4361-914d-87d8489c90e5}</Project>
+      <Name>Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
