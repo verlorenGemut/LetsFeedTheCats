@@ -20,10 +20,10 @@ namespace Cat_Feeder
         
         public int  numberOfTimetable = 0;
 
-        public event Action<int> TimetableСhoose;
-        public event Action TimetableExportAdmin;
-        public event Action TimetableImportAdmin;
-        public event Action<string> TimetableText;
+        public event Action<int> evTimetableСhoose;
+        public event Action evTimetableExportAdmin;
+        public event Action evTimetableImportAdmin;
+        public event Action<string> evTimetableText;
 
         private void TimetableAdmin_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace Cat_Feeder
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //Это заголовок текста  Timetables Admin над списком расписаний НЕ ЗНАЮ КТО СДЕЛАЛ НА НЕГО ДЕЙСТВИЕ И ЗАЧЕМ????????????      ЧЕРНЕЦКИЙ   ВЛАДИМИР
+
         }
 
         private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
@@ -42,78 +42,78 @@ namespace Cat_Feeder
 
         private void ExportTimetableAdmin_Button_Click(object sender, EventArgs e)
         {
-            TimetableExportAdmin?.Invoke();
+            evTimetableExportAdmin?.Invoke();
         }
 
         private void ImportTimetableAdmin_Button_Click(object sender, EventArgs e)
         {
-            TimetableImportAdmin?.Invoke();
+            evTimetableImportAdmin?.Invoke();
         }
 
         private void TimetableAdmin_Button1_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 1;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button2_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 2;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button3_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 3;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button4_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 4;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button5_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 5;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button6_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 6;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button7_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 7;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button8_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 8;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button9_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 9;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button10_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 10;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TimetableAdmin_Button11_Click(object sender, EventArgs e)
         {
             numberOfTimetable = 11;
-            TimetableСhoose?.Invoke(numberOfTimetable);
+            evTimetableСhoose?.Invoke(numberOfTimetable);
         }
 
         private void TextOfTimetableAdmin_TextInput_Click(object sender, EventArgs e)

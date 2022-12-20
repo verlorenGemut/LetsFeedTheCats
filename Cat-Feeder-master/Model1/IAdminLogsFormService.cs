@@ -8,10 +8,10 @@ namespace Model1
 {
     public interface IAdminLogsFormService
     {
-        event Action UserChoosed;
-        event Action LogChoosed;
-        event Action AllLogsPrinted;
-        event Action LogsExported;
+        event Action evUserChoosed;
+        event Action evLogChoosed;
+        event Action evAllLogsPrinted;
+        event Action evLogsExported;
         void ChooseUser();
         void ChooseLog();
         void PrintAllLogs();

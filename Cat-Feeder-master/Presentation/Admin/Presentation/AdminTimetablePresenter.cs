@@ -19,13 +19,13 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.TimetableExportAdmin += TimetableExportAdmin;
-            _view.TimetableImportAdmin += TimetableImportAdmin;
-            _view.TimetableСhoose += TimetableСhoose;
-            _view.TimetableText += TimetableText;
+            _view.evTimetableExportAdmin += TimetableExportAdmin;
+            _view.evTimetableImportAdmin += TimetableImportAdmin;
+            _view.evTimetableСhoose += TimetableСhoose;
+            _view.evTimetableText += TimetableText;
 
             _service = service;
-            _service.TimetableEvent += TimetableEvent;
+            _service.evTimetable += TimetableEvent;
         }
 
         private void TimetableExportAdmin()

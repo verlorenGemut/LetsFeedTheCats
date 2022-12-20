@@ -6,12 +6,10 @@ namespace Model.Ententity
 {
     public class Log
     {
-        private string occasion;
+        private string strOccasion;
         private DateTime time;
-
- 
         public DateTime Time { get => time; set => time = value; }
-        public string Occasion { get => occasion; set => occasion = value; }
+        public string Occasion { get => strOccasion; set => strOccasion = value; }
 
         public Log(string occassion, DateTime time)
         {

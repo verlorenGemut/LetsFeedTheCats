@@ -8,12 +8,10 @@ namespace Model1.Service
 {
     public class AdminRegFormService : IAdminRegFormService
     {
-        public event Action UserRegistered;
+        public event Action evUserRegistered;
         public void AddUser(string login, string password)
         {
-            //добавляем пользователя
-
-            UserRegistered?.Invoke();
+            evUserRegistered?.Invoke();
 
         }
     }

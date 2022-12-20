@@ -8,7 +8,7 @@ namespace Model1
 {
     public interface IAdminRegFormService
     {
-        event Action UserRegistered;
+        event Action evUserRegistered;
 
         void AddUser(string login, string password);
 

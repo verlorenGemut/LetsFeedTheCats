@@ -19,16 +19,16 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.ChooseUser += ChooseUser;
-            _view.ChooseLog += ChooseLog;
-            _view.PrintAllLogs += PrintAllLogs;
-            _view.ExportLogs += ExportLogs;
+            _view.evChooseUser += ChooseUser;
+            _view.evChooseLog += ChooseLog;
+            _view.evPrintAllLogs += PrintAllLogs;
+            _view.evExportLogs += ExportLogs;
 
             _service = service;
-            _service.UserChoosed += UserChoosed;
-            _service.LogChoosed += LogChoosed;
-            _service.AllLogsPrinted += AllLogsPrinted;
-            _service.LogsExported += LogsExported;
+            _service.evUserChoosed += UserChoosed;
+            _service.evLogChoosed += LogChoosed;
+            _service.evAllLogsPrinted += AllLogsPrinted;
+            _service.evLogsExported += LogsExported;
 
         }
 

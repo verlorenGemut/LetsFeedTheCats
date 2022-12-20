@@ -17,12 +17,12 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.ChooseSensorFeeder += ChooseSensorFeeder;
-            _view.ChooseDispenserFeeder += ChooseDispenserFeeder;
-            _view.ChooseUser += ChooseUser;
-            _view.SaveFeedor += SaveFeedor;
-            _view.RemoveFeedor += RemoveFeedor;
-            _view.ChooseFeeder += ChooseFeeder;
+            _view.evChooseSensorFeeder += ChooseSensorFeeder;
+            _view.evChooseDispenserFeeder += ChooseDispenserFeeder;
+            _view.evChooseUser += ChooseUser;
+            _view.evSaveFeeder += SaveFeedor;
+            _view.evRemoveFeeder += RemoveFeedor;
+            _view.evChooseFeeder += ChooseFeeder;
         }
 
         private void ChooseSensorFeeder()

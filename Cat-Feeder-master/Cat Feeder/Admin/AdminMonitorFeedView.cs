@@ -21,12 +21,12 @@ namespace Cat_Feeder
             InitializeComponent();
         }
 
-        public event Action ChooseSensorFeeder;
-        public event Action ChooseDispenserFeeder;
-        public event Action ChooseUser;
-        public event Action SaveFeedor;
-        public event Action RemoveFeedor;
-        public event Action ChooseFeeder;
+        public event Action evChooseSensorFeeder;
+        public event Action evChooseDispenserFeeder;
+        public event Action evChooseUser;
+        public event Action evSaveFeeder;
+        public event Action evRemoveFeeder;
+        public event Action evChooseFeeder;
 
         private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -75,27 +75,27 @@ namespace Cat_Feeder
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ChooseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void userDomainUpDown_SelectedItemChanged(object sender, EventArgs e)
         {
-            ChooseUser?.Invoke();
+            evChooseUser?.Invoke();
         }
 
         private void feedorButton1_Click(object sender, EventArgs e)
         {
-            ChooseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void feedorButton4_Click(object sender, EventArgs e)
         {
-            ChooseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void feedorButton5_Click(object sender, EventArgs e)
         {
-            ChooseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void nameFeederTextBox_TextChanged(object sender, EventArgs e)
@@ -107,19 +107,19 @@ namespace Cat_Feeder
         {
             if (typeFeeder.Equals("dispenser"))
             {
-                ChooseDispenserFeeder?.Invoke();
+                evChooseDispenserFeeder?.Invoke();
 
             }
             else
             {
-                ChooseSensorFeeder?.Invoke();
+                evChooseSensorFeeder?.Invoke();
             }
-            SaveFeedor?.Invoke();
+            evSaveFeeder?.Invoke();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            RemoveFeedor?.Invoke();
+            evRemoveFeeder?.Invoke();
         }
 
         public new void Show()

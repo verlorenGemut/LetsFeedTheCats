@@ -17,8 +17,8 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.SaveTimetable += SaveTimetable;
-            _view.ShowExistTimetable += ShowExistTimetable;
+            _view.evSaveTimetable += SaveTimetable;
+            _view.evShowExistTimetable += ShowExistTimetable;
             
         }
 

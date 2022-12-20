@@ -17,11 +17,11 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.ChooseFeed += ChooseFeed;
-            _view.ChooseTimetable += ChooseTimetable;
-            _view.ExportTimetable += ExportTimetable;
-            _view.ImportTimetable += ImportTimetable;
-            _view.SaveTimetable += SaveTimetable;
+            _view.evChooseFeed += ChooseFeed;
+            _view.evChooseTimetable += ChooseTimetable;
+            _view.evExportTimetable += ExportTimetable;
+            _view.evImportTimetable += ImportTimetable;
+            _view.evSaveTimetable += SaveTimetable;
           
         }
         public void ChooseFeed()

@@ -14,15 +14,15 @@ namespace Cat_Feeder
 {
     public partial class UserMakeMarkFormView : Form, IUserMakeMarkFormView
     {
-        public string Note => TextBoxOfTimeTables.Text;        //Альтернативно         ЧЕРНЕЦКИЙ   ВЛАДИМИР
+        public string Note => TextBoxOfTimeTables.Text;
         public UserMakeMarkFormView()
         {
             InitializeComponent();
         }
 
-        public event Action ChoiseFeeder;
-        public event Action MakeNoteToFeeder;
-        public event Action MakeNoteByHand;
+        public event Action evChooseFeeder;
+        public event Action evMakeNoteToFeeder;
+        public event Action evMakeNoteByHand;
 
         public new void Show()
         {
@@ -31,7 +31,7 @@ namespace Cat_Feeder
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //  НЕ ПОНЯТНО ДЛЯ ЧЕГО             ЧЕРНЕЦКИЙ   ВЛАДИМИР
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,67 +51,67 @@ namespace Cat_Feeder
 
         private void NoteByHandButton_Click(object sender, EventArgs e)
         {
-            MakeNoteByHand?.Invoke();
+            evMakeNoteByHand?.Invoke();
         }
 
         private void ApplyNoteToFeederButton_Click(object sender, EventArgs e)
         {
-            MakeNoteToFeeder?.Invoke();
+            evMakeNoteToFeeder?.Invoke();
         }
 
         private void Feeder1_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder2_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder3_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder4_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder5_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder6_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder7_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder8_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder9_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder10_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void Feeder11_Button_Click(object sender, EventArgs e)
         {
-            ChoiseFeeder?.Invoke();
+            evChooseFeeder?.Invoke();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

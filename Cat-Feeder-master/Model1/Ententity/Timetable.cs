@@ -4,14 +4,14 @@ namespace Model.Ententity
 {
     public class Timetable
     {
-        private string name;
-        private List<TumpleTimetable> data;
-        public string Name { get => name; set => name = value; }
-        internal List<TumpleTimetable> Data { get => data; set => data = value; }
+        private string strName;
+        private List<TumpleTimetable> listData;
+        public string Name { get => strName; set => strName = value; }
+        internal List<TumpleTimetable> Data { get => listData; set => listData = value; }
         public Timetable(string name, List<TumpleTimetable> data)
         {
-            this.name = name;
-            this.data = data;
+            strName = name;
+            listData = data;
         }
     }
 }

@@ -8,27 +8,27 @@ namespace Model.Ententity
 
     public abstract class Feeder
     {
-        private string name; // Имя
+        private string strName;
         public string Name
         {
-            get { return name; }
-            set => name = value;
+            get { return strName; }
+            set => strName = value;
         }
-        private int value; // Наполненность кормушки
+        private int amountOfFood;
         public int Value
         {
-            get { return value; }
-            set { this.value = value; }
+            get { return amountOfFood; }
+            set { amountOfFood = value; }
         }
 
        
 
-        private List<Note> notes;// Записи
+        private List<Note> notes;
 
         public List<Note> Notes { get => notes; set => notes = value; }
         
 
-        private Timetable timetable; // Прикрепленное расписсание
+        private Timetable timetable;
         public Timetable Timetable { get => timetable; set => timetable = value; }
 
     }
@@ -36,7 +36,7 @@ namespace Model.Ententity
     {
         public DispenserFeeder()
         {
-            Console.WriteLine("Кормушка с дозатором");
+            Console.WriteLine("Dispenser Feeder");
         }
     }
 
@@ -44,28 +44,12 @@ namespace Model.Ententity
     {
         public SensorFeeder()
         {
-            Console.WriteLine("Кормушка с сенсором");
+            Console.WriteLine("Sensor Feeder");
         }
     }
 
     abstract class Developer
     {   
-        
         abstract public Feeder Create();
-    }
-    class SensorDeveloper : Developer
-    {
-        public override Feeder Create()
-        {
-            return new SensorFeeder();
-        }
-    }
-
-    class DispenserDeveloper : Developer
-    {
-        public override Feeder Create()
-        {
-            return new DispenserFeeder();
-        }
     }
 }

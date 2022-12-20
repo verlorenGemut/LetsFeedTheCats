@@ -10,12 +10,12 @@ namespace Presentation
     {
         string name { get; }
 
-        event Action ChooseSensorFeeder;
-        event Action ChooseDispenserFeeder;
-        event Action ChooseUser;
-        event Action SaveFeedor;
-        event Action RemoveFeedor;
-        event Action ChooseFeeder;
+        event Action evChooseSensorFeeder;
+        event Action evChooseDispenserFeeder;
+        event Action evChooseUser;
+        event Action evSaveFeeder;
+        event Action evRemoveFeeder;
+        event Action evChooseFeeder;
 
     }
 }

@@ -10,6 +10,6 @@ namespace Presentation
     {
         string password { get; }
         string login { get; }
-        event Action<string, string> AddUser;
+        event Action<string, string> evAddUser;
     }
 }

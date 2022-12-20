@@ -22,8 +22,8 @@ namespace Cat_Feeder
             InitializeComponent();
         }
 
-        public event Action SaveTimetable;
-        public event Action ShowExistTimetable;
+        public event Action evSaveTimetable;
+        public event Action evShowExistTimetable;
 
         public new void Show()
         {
@@ -62,12 +62,12 @@ namespace Cat_Feeder
 
         private void saveTimetableButton_Click(object sender, EventArgs e)
         {
-            SaveTimetable?.Invoke();
+            evSaveTimetable?.Invoke();
         }
 
         private void chooseExistTimetableButton_Click(object sender, EventArgs e)
         {
-            ShowExistTimetable?.Invoke();
+            evShowExistTimetable?.Invoke();
         }
 
         private void textBoxTimetable_TextChanged(object sender, EventArgs e)

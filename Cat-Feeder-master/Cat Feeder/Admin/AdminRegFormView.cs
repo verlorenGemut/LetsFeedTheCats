@@ -17,7 +17,7 @@ namespace Cat_Feeder
         public string password => PasswordBox.Text;
         public string login => loginBox.Text;
 
-        public event Action<string, string> AddUser;
+        public event Action<string, string> evAddUser;
         public AdminRegFormView()
         {
             InitializeComponent();
@@ -42,17 +42,17 @@ namespace Cat_Feeder
         {
             if (PasswordBox.Text.Length == 0 && loginBox.Text.Length == 0)
             {
-                MessageBox.Show("Введите логин и пароль");
+                MessageBox.Show("Enter logina and password");
             } else if(login.Length == 0 || login.Length > 15 || login.Length < 2)
             {
-                MessageBox.Show("Длинна догина должна быть от 2 до 15 символов");
+                MessageBox.Show("Login lenght must be from 2 to 15 symbols");
             } else if (PasswordBox.Text.Length < 8)
             {
-                MessageBox.Show("Длинна пароля должна быть 8 символов");
+                MessageBox.Show("Password lenght must be >= 8 symbols");
             } else
             {
-                MessageBox.Show($"Пользователь зарегестрирован\nlogin: {login}\npassword: {password}");
-                AddUser?.Invoke(login, password);
+                MessageBox.Show($"User registred\nlogin: {login}\npassword: {password}");
+                evAddUser?.Invoke(login, password);
             }
         }
 

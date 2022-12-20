@@ -18,7 +18,7 @@ namespace Cat_Feeder
             InitializeComponent();
         }
 
-        public event Action ChoiseFeeder;
+        public event Action evChooseFeeder;
 
         private void Feeder_1_Button_Click(object sender, EventArgs e)
         {

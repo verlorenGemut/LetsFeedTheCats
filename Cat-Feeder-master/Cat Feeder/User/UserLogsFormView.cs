@@ -18,9 +18,9 @@ namespace Cat_Feeder
             InitializeComponent();
         }
 
-        public event Action ShowAllLogs;
-        public event Action ExportLogs;
-        public event Action<string> ChooseLog;
+        public event Action evShowAllLogs;
+        public event Action evExportLogs;
+        public event Action<string> evChooseLog;
 
         public new void Show()
         {
@@ -38,18 +38,18 @@ namespace Cat_Feeder
 
         private void ShowAllLogsButton_Click(object sender, EventArgs e)
         {
-            ShowAllLogs?.Invoke();
+            evShowAllLogs?.Invoke();
         }
 
         private void ExportLogButton_Click(object sender, EventArgs e)
         {
-            ExportLogs?.Invoke();
+            evExportLogs?.Invoke();
         }
 
         private void LogButton_Click(object sender, EventArgs e)
         {
             string textLog = LogButton.Text;
-            ChooseLog?.Invoke(textLog);
+            evChooseLog?.Invoke(textLog);
         }
     }
 }

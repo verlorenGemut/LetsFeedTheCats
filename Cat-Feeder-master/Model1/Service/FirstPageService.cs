@@ -10,8 +10,8 @@ namespace Model1.Service
 {
     public class FirstPageService : IFirstPageService
     {
-        public event Action UserEvent;
-        public event Action ShowAdminPage;
+        public event Action evUser;
+        public event Action evShowAdminPage;
         public IRepository<Customer> _customer;
         private Customer customer;
 
@@ -21,8 +21,7 @@ namespace Model1.Service
         }
         public void createCustormer(string login, string password)
         {
-
-            customer = _customer.Find(login);
+            customer = _customer.find(login);
             if(customer != null)
             {
                 if (customer.Password.Equals(password))
@@ -30,7 +29,7 @@ namespace Model1.Service
                     MessageBox.Show("Successfull");
                     if (customer.Status.Equals("user"))
                     {
-                        UserEvent?.Invoke();
+                        evUser?.Invoke();
                     }
                     
                 }
@@ -48,7 +47,7 @@ namespace Model1.Service
 
         public void createAdmin(string login, string password)
         {
-            customer = _customer.Find(login);
+            customer = _customer.find(login);
             if (customer != null)
             {
                 if (customer.Password.Equals(password))
@@ -56,7 +55,7 @@ namespace Model1.Service
                     MessageBox.Show("Successfull");
                     if (customer.Status.Equals("admin"))
                     {
-                        ShowAdminPage?.Invoke();
+                        evShowAdminPage?.Invoke();
                     }
                 }
                 else

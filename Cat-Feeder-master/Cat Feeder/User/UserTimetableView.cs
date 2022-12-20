@@ -16,11 +16,11 @@ namespace Cat_Feeder
         public string TitleOfTimetables => TitleBoxOfTimetables.Text;
         public string TextOfTimeTables => TextBoxOfTimeTables.Text;
 
-        public event Action ChooseTimetable;
-        public event Action ExportTimetable;
-        public event Action ImportTimetable;
-        public event Action SaveTimetable;
-        public event Action ChooseFeed;
+        public event Action evChooseTimetable;
+        public event Action evExportTimetable;
+        public event Action evImportTimetable;
+        public event Action evSaveTimetable;
+        public event Action evChooseFeed;
         public UserTimetableView()
         {
             InitializeComponent();
@@ -58,32 +58,31 @@ namespace Cat_Feeder
 
         private void button14_Click(object sender, EventArgs e)
         {
-            // НЕ ЗНАЮ ЗАЧЕМ И ДЛЯ ЧЕГО                                             ЧЕРНЕЦКИЙ   ВЛАДИМИР
         }
 
         private void ExportTimetableButton_Click(object sender, EventArgs e)
         {
-            ExportTimetable?.Invoke();
+            evExportTimetable?.Invoke();
         }
 
         private void ImportTimetableButton_Click(object sender, EventArgs e)
         {
-            ImportTimetable?.Invoke();
+            evImportTimetable?.Invoke();
         }
 
         private void ChooseFeedButton_Click(object sender, EventArgs e)
         {
-            ChooseFeed?.Invoke();
+            evChooseFeed?.Invoke();
         }
 
         private void Timetable_Button1_Click(object sender, EventArgs e)
         {
-            ChooseTimetable?.Invoke();
+            evChooseTimetable?.Invoke();
         }
 
         private void SaveTametableButton_Click(object sender, EventArgs e)
         {
-            SaveTimetable?.Invoke();
+            evSaveTimetable?.Invoke();
         }
 
         private void textBoxOfTimeTables_TextChanged(object sender, EventArgs e)

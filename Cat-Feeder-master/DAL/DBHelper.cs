@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using Model1;
 
 namespace DAL
 {
     public static class DBHelper
     {
         private static MySqlConnection connection;
-        private static MySqlCommand cmd = null;
-        private static DataTable dt;
-        private static MySqlDataAdapter sda;
+        private static MySqlCommand command = null;
 
-        public static void EstablishConnection()
+        public static void establishConnection()
         {
             try
             {
@@ -36,18 +29,18 @@ namespace DAL
             }
         }
 
-        public static MySqlCommand RunQuery(string query, string Name)
+        public static MySqlCommand runQuery(string query, string name)
         {
             try
             {
                 if(connection != null)
                 {
                     connection.Open();
-                    cmd = connection.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@Name", Name);
-                    cmd.ExecuteNonQuery();
+                    command = connection.CreateCommand();
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.ExecuteNonQuery();
                     
                 }
             }
@@ -59,7 +52,7 @@ namespace DAL
             {
                 connection.Close();
             }
-            return cmd;
+            return command;
         }
     }
 }

@@ -20,11 +20,11 @@ namespace Cat_Feeder
         public string password => PasswordBox.Text;
         public string login => loginBox.Text;
 
-        public event Action Connection;
+        public event Action evConnection;
         public FirstPageView()
         {
             InitializeComponent();
-            DBHelper.EstablishConnection();
+            DBHelper.establishConnection();
 
         }
         public event Action ShowUserMainPageView;
@@ -48,10 +48,10 @@ namespace Cat_Feeder
         {
             if (PasswordBox.Text.Length == 0 && loginBox.Text.Length ==0)
             {
-                MessageBox.Show($"Вы не ввели данные");
+                MessageBox.Show($"You haven't inputted data");
             } else if(password.Length < 3 || password.Length >8 || login.Length < 2 || login.Length > 15)
             {
-                MessageBox.Show($"Проверьте корректность введеных данных\nLogin(от 2 до 15 символов)\nPassword(2-8 символов)\nUser/Admin");
+                MessageBox.Show($"Check data, please\nLogin(from 2 to 15 symbols)\nPassword(2-8 symbols)\nUser/Admin");
             } else {
                 if (status.Equals("User"))
                 {
@@ -96,7 +96,7 @@ namespace Cat_Feeder
             PasswordBox.PasswordChar = '*';
             if (PasswordBox.Text.Length > 8)
             {
-                MessageBox.Show("Длинна пароля должна быть не больше 8 символов");
+                MessageBox.Show("Password must be 8 symbols");
             }
         }
         private void UserRadioButton_CheckedChanged(object sender, EventArgs e)

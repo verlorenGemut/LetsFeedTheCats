@@ -11,8 +11,8 @@ namespace Presentation
         string timetableName { get; }
         string timetable { get; }
 
-        event Action SaveTimetable;
-        event Action ShowExistTimetable;
+        event Action evSaveTimetable;
+        event Action evShowExistTimetable;
         
     }
 }

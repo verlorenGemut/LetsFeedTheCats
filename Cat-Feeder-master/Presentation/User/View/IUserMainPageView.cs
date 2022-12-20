@@ -8,10 +8,10 @@ namespace Presentation
 {
     public interface IUserMainPageView : IView
     {
-        event Action ShowMakeMarkFormView;
-        event Action ShowLogsFormView;
-        event Action ShowTimetableView;
-        event Action ShowFeedVeiw;
+        event Action evShowMakeMarkFormView;
+        event Action evShowLogsFormView;
+        event Action evShowTimetableView;
+        event Action evShowFeedVeiw;
 
     }
 }

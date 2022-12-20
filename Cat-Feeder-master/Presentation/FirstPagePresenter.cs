@@ -24,8 +24,8 @@ namespace Presentation
             
 
             _service = service;
-            _service.UserEvent += UserEvent;
-            _service.ShowAdminPage += ShowAdminPage;
+            _service.evUser += UserEvent;
+            _service.evShowAdminPage += ShowAdminPage;
         }
 
         private void ShowAdminPage()

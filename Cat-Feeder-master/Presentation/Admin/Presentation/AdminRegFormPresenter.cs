@@ -20,10 +20,10 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.AddUser += AddUser;
+            _view.evAddUser += AddUser;
 
             _service = service;
-            _service.UserRegistered += UserRegistered;
+            _service.evUserRegistered += UserRegistered;
         }
 
         private void AddUser(string login, string password)

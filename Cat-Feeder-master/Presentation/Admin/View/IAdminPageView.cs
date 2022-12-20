@@ -8,9 +8,9 @@ namespace Presentation
 {
     public interface IAdminPageView: IView
     {
-        event Action ShowAdminRegFormView;
-        event Action ShowAdminMonitorFeedView;
-        event Action ShowAdminLogsFormView;
-        event Action ShowAdminTimetableView;
+        event Action evShowAdminRegFormView;
+        event Action evShowAdminMonitorFeedView;
+        event Action evShowAdminLogsFormView;
+        event Action evShowAdminTimetableView;
     }
 }

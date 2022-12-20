@@ -17,12 +17,12 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.ChoiseFeeder += ChoiseFeeder;
-            _view.MakeNoteByHand += MakeNoteByHand;
-            _view.MakeNoteToFeeder += MakeNoteToFeeder;
+            _view.evChooseFeeder += ChooseFeeder;
+            _view.evMakeNoteByHand += MakeNoteByHand;
+            _view.evMakeNoteToFeeder += MakeNoteToFeeder;
         }
 
-        private void ChoiseFeeder()
+        private void ChooseFeeder()
         {
 
         }

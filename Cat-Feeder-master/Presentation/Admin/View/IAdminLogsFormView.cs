@@ -9,9 +9,9 @@ namespace Presentation
     public interface IAdminLogsFormView : IView
     {
         
-        event Action ChooseUser;
-        event Action ChooseLog;
-        event Action PrintAllLogs;
-        event Action ExportLogs;
+        event Action evChooseUser;
+        event Action evChooseLog;
+        event Action evPrintAllLogs;
+        event Action evExportLogs;
     }
 }

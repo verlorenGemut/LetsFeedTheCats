@@ -1,63 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Model.Ententity;
 using Model1;
-using Model.Ententity;
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace DAL
 {
     public class UserRepository : IRepository<Customer>
     {
-        public int Add(Customer obj)
+        public int add(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public Customer Find(string name)
+        public Customer find(string name)
         {
-            MySqlCommand cmd = null;
-            DataTable dt;
-            MySqlDataAdapter sda;
+            DataTable dataTable;
+            MySqlDataAdapter dataAdapter;
 
             Customer customer = null;
             string query = "SELECT * FROM mydb.user WHERE Name = (@name) limit 1";
-            cmd = DBHelper.RunQuery(query, name);
-            if(cmd != null)
+            MySqlCommand command = DBHelper.runQuery(query, name);
+            if (command != null)
             {
-                dt = new DataTable();
-                sda = new MySqlDataAdapter(cmd);
-                sda.Fill(dt);
-                foreach(DataRow dr in dt.Rows)
+                dataTable = new DataTable();
+                dataAdapter = new MySqlDataAdapter(command);
+                dataAdapter.Fill(dataTable);
+                foreach(DataRow dr in dataTable.Rows)
                 {
-                    string uName = dr["Name"].ToString();
+                    string userName = dr["Name"].ToString();
                     string password = dr["password"].ToString();
                     string status = dr["status"].ToString();
-                    customer = new Customer(uName, password, status);
+                    customer = new Customer(userName, password, status);
                 }
             }
             return customer;
         }
 
-        public IEnumerable<Customer> GetAll()
+        public IEnumerable<Customer> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(int id)
+        public void remove(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Save()
+        public void save()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Customer obj)
+        public void update(Customer customer)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,7 @@ namespace Model1
 {
     public interface IAdminTimetableService
     {
-        event Action TimetableEvent;
+        event Action evTimetable;
         void TimetableExportAdmin();
         void TimetableImportAdmin();
         void TimetableСhoose(int timetable);

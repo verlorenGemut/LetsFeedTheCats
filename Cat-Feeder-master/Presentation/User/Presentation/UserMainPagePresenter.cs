@@ -17,10 +17,10 @@ namespace Presentation
             _kernel = kernel;
 
             _view = view;
-            _view.ShowFeedVeiw += ShowFeedVeiw;
-            _view.ShowMakeMarkFormView += ShowMakeMarkFormView;
-            _view.ShowLogsFormView += ShowLogsFormView;
-            _view.ShowTimetableView += ShowTimetableView;
+            _view.evShowFeedVeiw += ShowFeedVeiw;
+            _view.evShowMakeMarkFormView += ShowMakeMarkFormView;
+            _view.evShowLogsFormView += ShowLogsFormView;
+            _view.evShowTimetableView += ShowTimetableView;
 
         }
 

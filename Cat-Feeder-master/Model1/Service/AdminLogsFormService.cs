@@ -8,37 +8,25 @@ namespace Model1.Service
 {
     public class AdminLogsFormService : IAdminLogsFormService
     {
-        public event Action UserChoosed;
-        public event Action LogChoosed;
-        public event Action AllLogsPrinted;
-        public event Action LogsExported;
+        public event Action evUserChoosed;
+        public event Action evLogChoosed;
+        public event Action evAllLogsPrinted;
+        public event Action evLogsExported;
         public void ChooseUser() 
         {
-            //код
-
-
-            UserChoosed?.Invoke();
+            evUserChoosed?.Invoke();
         }
         public void ChooseLog() 
         {
-            //код
-
-
-            LogChoosed?.Invoke();
+            evLogChoosed?.Invoke();
         }
         public void PrintAllLogs() 
         {
-            //код
-
-
-            AllLogsPrinted?.Invoke();
+            evAllLogsPrinted?.Invoke();
         }
         public void ExportLogs() 
         {
-            //код
-
-
-            LogsExported?.Invoke();
+            evLogsExported?.Invoke();
         }
     }
 }

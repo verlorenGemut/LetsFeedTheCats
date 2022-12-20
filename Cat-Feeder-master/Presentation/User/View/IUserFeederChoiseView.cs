@@ -8,6 +8,6 @@ namespace Presentation
 {
     public interface IUserFeederChoiseView : IView
     {
-        event Action ChoiseFeeder;
+        event Action evChooseFeeder;
     }
 }

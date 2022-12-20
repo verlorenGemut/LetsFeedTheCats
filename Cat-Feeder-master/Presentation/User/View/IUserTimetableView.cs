@@ -11,10 +11,10 @@ namespace Presentation
         string TextOfTimeTables { get; }
         string TitleOfTimetables { get; }
 
-        event Action ChooseTimetable;
-        event Action ExportTimetable;
-        event Action ImportTimetable;
-        event Action SaveTimetable;
-        event Action ChooseFeed;
+        event Action evChooseTimetable;
+        event Action evExportTimetable;
+        event Action evImportTimetable;
+        event Action evSaveTimetable;
+        event Action evChooseFeed;
     }
 }

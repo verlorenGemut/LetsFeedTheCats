@@ -18,10 +18,10 @@ namespace Cat_Feeder
             InitializeComponent();
         }
 
-        public event Action ShowAdminRegFormView;
-        public event Action ShowAdminMonitorFeedView;
-        public event Action ShowAdminLogsFormView;
-        public event Action ShowAdminTimetableView;
+        public event Action evShowAdminRegFormView;
+        public event Action evShowAdminMonitorFeedView;
+        public event Action evShowAdminLogsFormView;
+        public event Action evShowAdminTimetableView;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,22 +35,22 @@ namespace Cat_Feeder
 
         private void monitorFeederButton_Click(object sender, EventArgs e)
         {
-            ShowAdminMonitorFeedView?.Invoke();
+            evShowAdminMonitorFeedView?.Invoke();
         }
 
         private void regButton_Click_1(object sender, EventArgs e)
         {
-            ShowAdminRegFormView?.Invoke();
+            evShowAdminRegFormView?.Invoke();
         }
 
         private void logButton_Click(object sender, EventArgs e)
         {
-            ShowAdminLogsFormView?.Invoke();
+            evShowAdminLogsFormView?.Invoke();
         }
 
         private void timtableButton_Click(object sender, EventArgs e)
         {
-            ShowAdminTimetableView?.Invoke();
+            evShowAdminTimetableView?.Invoke();
         }
 
         public new void Show()

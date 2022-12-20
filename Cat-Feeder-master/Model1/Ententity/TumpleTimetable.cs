@@ -8,7 +8,6 @@ namespace Model.Ententity
     {
         private int weight;
         private DateTime time;
-
         public int Weight { get => weight; set => weight = value; }
         public DateTime Time { get => time; set => time = value; }
 

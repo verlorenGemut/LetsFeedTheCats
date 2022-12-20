@@ -8,30 +8,22 @@ namespace Model1.Service
 {
     public class AdminTimetableService: IAdminTimetableService
     {
-        public event Action TimetableEvent;
+        public event Action evTimetable;
         public void TimetableExportAdmin()
         {
-            //код
-
-            TimetableEvent?.Invoke();
+            evTimetable?.Invoke();
         }
         public void TimetableImportAdmin()
         {
-            //код
-
-            TimetableEvent?.Invoke();
+            evTimetable?.Invoke();
         }
         public void TimetableСhoose(int timetable)
         {
-            //код
-
-            TimetableEvent?.Invoke();
+            evTimetable?.Invoke();
         }
         public void TimetableText(string timetableText)
         {
-            //код
-
-            TimetableEvent?.Invoke();
+            evTimetable?.Invoke();
         }
     }
 }

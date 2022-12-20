@@ -13,12 +13,12 @@ namespace Cat_Feeder
 {
     public partial class AdminLogsFormView : Form, IAdminLogsFormView
     {
-        public string textLog;
+        public string strTextLog;
 
-        public event Action ChooseUser;
-        public event Action ChooseLog;
-        public event Action PrintAllLogs;
-        public event Action ExportLogs;
+        public event Action evChooseUser;
+        public event Action evChooseLog;
+        public event Action evPrintAllLogs;
+        public event Action evExportLogs;
 
         public AdminLogsFormView()
         {
@@ -27,12 +27,12 @@ namespace Cat_Feeder
 
         private void ShowAllLogsButton_Click(object sender, EventArgs e)
         {
-            PrintAllLogs?.Invoke();
+            evPrintAllLogs?.Invoke();
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            ExportLogs?.Invoke();
+            evExportLogs?.Invoke();
         }
 
         private void ShowLogButton_Click(object sender, EventArgs e)
@@ -48,57 +48,57 @@ namespace Cat_Feeder
 
         private void logButton9_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void userUpDown_SelectedItemChanged(object sender, EventArgs e)
         {
-            ChooseUser?.Invoke();
+            evChooseUser?.Invoke();
         }
 
         private void logButton1_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton2_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton3_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton4_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton5_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton6_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton7_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton8_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         private void logButton10_Click(object sender, EventArgs e)
         {
-            ChooseLog?.Invoke();
+            evChooseLog?.Invoke();
         }
 
         public new void Show()
